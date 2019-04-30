@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_08f1875ab5314dcda13bbb27bf2255aa {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_08f1875ab5314dcda13bbb27bf2255aa" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_08f1875ab5314dcda13bbb27bf2255aa = L.map(
+        'map_08f1875ab5314dcda13bbb27bf2255aa', {
+        center: [-43.530955, 172.6366455],
+        zoom: 13,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+L.control.scale().addTo(map_08f1875ab5314dcda13bbb27bf2255aa);
+
+    
+    var tile_layer_6c70888d7426474db57235dc7cf08958 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_08f1875ab5314dcda13bbb27bf2255aa);
+    
+            var feature_group_6ba6b18858d54270accbe5fff7d55d34 = L.featureGroup(
+                ).addTo(map_08f1875ab5314dcda13bbb27bf2255aa);
+        
+    
+        var marker_076701cb0ef44fa1be7a711b681a2911 = L.marker(
+            [-43.488669, 172.614436],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_f79b498503fe4e7ebc5461f32ce71b3a = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_076701cb0ef44fa1be7a711b681a2911.setIcon(icon_f79b498503fe4e7ebc5461f32ce71b3a);
+            
+    
+            var popup_dd950fbc0a504095b806331ead4068a0 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b907c47fa1804876b2be60c260e9f096 = $(`<div id="html_b907c47fa1804876b2be60c260e9f096" style="width: 100.0%; height: 100.0%;">St&nbsp;Joseph's&nbsp;School&nbsp;(Papanui)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>412</td> <tr><td>#&nbsp;European&nbsp;</td><td>277</td></table></div>`)[0];
+                popup_dd950fbc0a504095b806331ead4068a0.setContent(html_b907c47fa1804876b2be60c260e9f096);
+            
+
+            marker_076701cb0ef44fa1be7a711b681a2911.bindPopup(popup_dd950fbc0a504095b806331ead4068a0)
+            ;
+
+            
+        
+    
+        var marker_8dc6d0b83783467aba905588411a729f = L.marker(
+            [-43.565427, 172.65722399999999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_20b7d648819a422b81d9a5b24a13b2ee = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8dc6d0b83783467aba905588411a729f.setIcon(icon_20b7d648819a422b81d9a5b24a13b2ee);
+            
+    
+            var popup_ad2efc7883f34d34b5e2bfb314a0b10d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_e7b8ee174bf94358b6d388ccd60372a8 = $(`<div id="html_e7b8ee174bf94358b6d388ccd60372a8" style="width: 100.0%; height: 100.0%;">St&nbsp;Martins&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>550</td> <tr><td>#&nbsp;European&nbsp;</td><td>449</td></table></div>`)[0];
+                popup_ad2efc7883f34d34b5e2bfb314a0b10d.setContent(html_e7b8ee174bf94358b6d388ccd60372a8);
+            
+
+            marker_8dc6d0b83783467aba905588411a729f.bindPopup(popup_ad2efc7883f34d34b5e2bfb314a0b10d)
+            ;
+
+            
+        
+    
+        var marker_9244132622d24b61b8d9f4438d8908f1 = L.marker(
+            [-43.523222, 172.639253],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_da75547eee4343d891d94070b6c16b91 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9244132622d24b61b8d9f4438d8908f1.setIcon(icon_da75547eee4343d891d94070b6c16b91);
+            
+    
+            var popup_9676af50821741cf993424e1a2dd9611 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7f26ec9c549c4aff844aa5625d743fa9 = $(`<div id="html_7f26ec9c549c4aff844aa5625d743fa9" style="width: 100.0%; height: 100.0%;">St&nbsp;Mary's&nbsp;School&nbsp;(Christchurch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>110</td> <tr><td>#&nbsp;European&nbsp;</td><td>31</td></table></div>`)[0];
+                popup_9676af50821741cf993424e1a2dd9611.setContent(html_7f26ec9c549c4aff844aa5625d743fa9);
+            
+
+            marker_9244132622d24b61b8d9f4438d8908f1.bindPopup(popup_9676af50821741cf993424e1a2dd9611)
+            ;
+
+            
+        
+    
+        var marker_f50a36279f4c42b7a9a44625554d482b = L.marker(
+            [-43.511234, 172.604041],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_ca3b2fea926c47c7bd05cae3e24f8a98 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f50a36279f4c42b7a9a44625554d482b.setIcon(icon_ca3b2fea926c47c7bd05cae3e24f8a98);
+            
+    
+            var popup_86f9ceaa56b942d790c53f714df40fe4 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_03859828d2c74916a6668cfd5977e7b2 = $(`<div id="html_03859828d2c74916a6668cfd5977e7b2" style="width: 100.0%; height: 100.0%;">St&nbsp;Patrick's&nbsp;School&nbsp;(Bryndwr)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>165</td> <tr><td>#&nbsp;European&nbsp;</td><td>130</td></table></div>`)[0];
+                popup_86f9ceaa56b942d790c53f714df40fe4.setContent(html_03859828d2c74916a6668cfd5977e7b2);
+            
+
+            marker_f50a36279f4c42b7a9a44625554d482b.bindPopup(popup_86f9ceaa56b942d790c53f714df40fe4)
+            ;
+
+            
+        
+    
+        var marker_5c0c08bb9b864ef39bd05a2a6ca3b668 = L.marker(
+            [-43.536306, 172.596734],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_78a23e58eb3b4b70bfe4b2c196ca6fb9 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5c0c08bb9b864ef39bd05a2a6ca3b668.setIcon(icon_78a23e58eb3b4b70bfe4b2c196ca6fb9);
+            
+    
+            var popup_f5653a8518994934b0e51e886f34a467 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_61bf81a5955a4389b842d5ebed65119d = $(`<div id="html_61bf81a5955a4389b842d5ebed65119d" style="width: 100.0%; height: 100.0%;">Wharenui&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>303</td> <tr><td>#&nbsp;European&nbsp;</td><td>47</td></table></div>`)[0];
+                popup_f5653a8518994934b0e51e886f34a467.setContent(html_61bf81a5955a4389b842d5ebed65119d);
+            
+
+            marker_5c0c08bb9b864ef39bd05a2a6ca3b668.bindPopup(popup_f5653a8518994934b0e51e886f34a467)
+            ;
+
+            
+        
+    
+        var marker_052e449c1d504b1290c560a9f4260302 = L.marker(
+            [-43.559761, 172.63769],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_b0315a3400e443629cbc94c7abe4e88a = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_052e449c1d504b1290c560a9f4260302.setIcon(icon_b0315a3400e443629cbc94c7abe4e88a);
+            
+    
+            var popup_76a0b43b5ce34bc9bc819bb4033380fa = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_dee24e008bdd41769e75bd63f0d8a7b6 = $(`<div id="html_dee24e008bdd41769e75bd63f0d8a7b6" style="width: 100.0%; height: 100.0%;">St&nbsp;Peter's&nbsp;School&nbsp;(Beckenham)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>146</td> <tr><td>#&nbsp;European&nbsp;</td><td>106</td></table></div>`)[0];
+                popup_76a0b43b5ce34bc9bc819bb4033380fa.setContent(html_dee24e008bdd41769e75bd63f0d8a7b6);
+            
+
+            marker_052e449c1d504b1290c560a9f4260302.bindPopup(popup_76a0b43b5ce34bc9bc819bb4033380fa)
+            ;
+
+            
+        
+    
+        var marker_80a596b29c284a208b03f9c423883873 = L.marker(
+            [-43.529753, 172.592132],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_410f4f5dd1894e2b9fbb03e3d356eaef = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_80a596b29c284a208b03f9c423883873.setIcon(icon_410f4f5dd1894e2b9fbb03e3d356eaef);
+            
+    
+            var popup_a312cfa4c591430e8aec4c989852c2f7 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_88efc722e8234f59934a2aa6e7f42837 = $(`<div id="html_88efc722e8234f59934a2aa6e7f42837" style="width: 100.0%; height: 100.0%;">St&nbsp;Teresa's&nbsp;School&nbsp;(Riccarton)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>166</td> <tr><td>#&nbsp;European&nbsp;</td><td>36</td></table></div>`)[0];
+                popup_a312cfa4c591430e8aec4c989852c2f7.setContent(html_88efc722e8234f59934a2aa6e7f42837);
+            
+
+            marker_80a596b29c284a208b03f9c423883873.bindPopup(popup_a312cfa4c591430e8aec4c989852c2f7)
+            ;
+
+            
+        
+    
+        var marker_cd160efe070b4556b8beb0d547d94feb = L.marker(
+            [-43.570603000000006, 172.403173],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_75f99edbf0b34001a05cdf96131fae67 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cd160efe070b4556b8beb0d547d94feb.setIcon(icon_75f99edbf0b34001a05cdf96131fae67);
+            
+    
+            var popup_a1ddd50366cc4a5b8df828ad58b0b687 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_64bdfc44fdc347a09be3925313615460 = $(`<div id="html_64bdfc44fdc347a09be3925313615460" style="width: 100.0%; height: 100.0%;">Weedons&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>158</td> <tr><td>#&nbsp;European&nbsp;</td><td>139</td></table></div>`)[0];
+                popup_a1ddd50366cc4a5b8df828ad58b0b687.setContent(html_64bdfc44fdc347a09be3925313615460);
+            
+
+            marker_cd160efe070b4556b8beb0d547d94feb.bindPopup(popup_a1ddd50366cc4a5b8df828ad58b0b687)
+            ;
+
+            
+        
+    
+        var marker_113fb5b0351146209589aa49614b2cd5 = L.marker(
+            [-43.512142, 172.570879],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_461cc5e0e4c14f90a51de81205902e0c = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_113fb5b0351146209589aa49614b2cd5.setIcon(icon_461cc5e0e4c14f90a51de81205902e0c);
+            
+    
+            var popup_a3bc598558994aa2a63158dcf9641c1c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_71a6c8c317814a74b2679d64ce1b8c07 = $(`<div id="html_71a6c8c317814a74b2679d64ce1b8c07" style="width: 100.0%; height: 100.0%;">Westburn&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>445</td> <tr><td>#&nbsp;European&nbsp;</td><td>218</td></table></div>`)[0];
+                popup_a3bc598558994aa2a63158dcf9641c1c.setContent(html_71a6c8c317814a74b2679d64ce1b8c07);
+            
+
+            marker_113fb5b0351146209589aa49614b2cd5.bindPopup(popup_a3bc598558994aa2a63158dcf9641c1c)
+            ;
+
+            
+        
+    
+        var marker_8d92b2994130497f81c31200d2f8f86c = L.marker(
+            [-43.526215, 172.733519],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_77e00d1682a74228bdf7107fc8845c1e = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8d92b2994130497f81c31200d2f8f86c.setIcon(icon_77e00d1682a74228bdf7107fc8845c1e);
+            
+    
+            var popup_b2b5e0b0334246ff86e08d9de427dd31 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d21bd8a38f044f33ac51f12529d8b802 = $(`<div id="html_d21bd8a38f044f33ac51f12529d8b802" style="width: 100.0%; height: 100.0%;">South&nbsp;New&nbsp;Brighton&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>494</td> <tr><td>#&nbsp;European&nbsp;</td><td>379</td></table></div>`)[0];
+                popup_b2b5e0b0334246ff86e08d9de427dd31.setContent(html_d21bd8a38f044f33ac51f12529d8b802);
+            
+
+            marker_8d92b2994130497f81c31200d2f8f86c.bindPopup(popup_b2b5e0b0334246ff86e08d9de427dd31)
+            ;
+
+            
+        
+    
+        var marker_ccb297c291c542ef8b9405c2d0ed12f8 = L.marker(
+            [-43.498705, 172.64140700000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_71c36565362f442c89c27c112c5dcbee = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ccb297c291c542ef8b9405c2d0ed12f8.setIcon(icon_71c36565362f442c89c27c112c5dcbee);
+            
+    
+            var popup_7e47f1b5688f4c978d320b93b4aa717d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f961646ebd2d485c93de4399da85ae28 = $(`<div id="html_f961646ebd2d485c93de4399da85ae28" style="width: 100.0%; height: 100.0%;">Mairehau&nbsp;Primary&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>445</td> <tr><td>#&nbsp;European&nbsp;</td><td>280</td></table></div>`)[0];
+                popup_7e47f1b5688f4c978d320b93b4aa717d.setContent(html_f961646ebd2d485c93de4399da85ae28);
+            
+
+            marker_ccb297c291c542ef8b9405c2d0ed12f8.bindPopup(popup_7e47f1b5688f4c978d320b93b4aa717d)
+            ;
+
+            
+        
+    
+        var marker_50405b6047a94ca391160f813668bb14 = L.marker(
+            [-43.574863, 172.76253400000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_9837b04d355a463c846e2fed308fa503 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_50405b6047a94ca391160f813668bb14.setIcon(icon_9837b04d355a463c846e2fed308fa503);
+            
+    
+            var popup_57de80f6e7a0484ba69b899be4657a55 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1713fa8255184f5184dcfdf2de1f7ea1 = $(`<div id="html_1713fa8255184f5184dcfdf2de1f7ea1" style="width: 100.0%; height: 100.0%;">Our&nbsp;Lady&nbsp;Star&nbsp;of&nbsp;the&nbsp;Sea&nbsp;School&nbsp;(Christchurch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>55</td> <tr><td>#&nbsp;European&nbsp;</td><td>46</td></table></div>`)[0];
+                popup_57de80f6e7a0484ba69b899be4657a55.setContent(html_1713fa8255184f5184dcfdf2de1f7ea1);
+            
+
+            marker_50405b6047a94ca391160f813668bb14.bindPopup(popup_57de80f6e7a0484ba69b899be4657a55)
+            ;
+
+            
+        
+    
+        var marker_a9e2a3ed4a684e0da849387a7c32fe8a = L.marker(
+            [-43.573093, 172.75961999999998],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_11c688b22f464af9a7f60ca7f8e2c152 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a9e2a3ed4a684e0da849387a7c32fe8a.setIcon(icon_11c688b22f464af9a7f60ca7f8e2c152);
+            
+    
+            var popup_8ae6d904c84640e49a65144db6cbbc2f = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1ff86912207c42c9a623360125e152ad = $(`<div id="html_1ff86912207c42c9a623360125e152ad" style="width: 100.0%; height: 100.0%;">Sumner&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>402</td> <tr><td>#&nbsp;European&nbsp;</td><td>353</td></table></div>`)[0];
+                popup_8ae6d904c84640e49a65144db6cbbc2f.setContent(html_1ff86912207c42c9a623360125e152ad);
+            
+
+            marker_a9e2a3ed4a684e0da849387a7c32fe8a.bindPopup(popup_8ae6d904c84640e49a65144db6cbbc2f)
+            ;
+
+            
+        
+    
+        var marker_c76a2d2fabbb45c2adc1e15564e435ba = L.marker(
+            [-43.550157, 172.472353],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_7eb130435a9f4a29b4aa141c0ffc8566 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c76a2d2fabbb45c2adc1e15564e435ba.setIcon(icon_7eb130435a9f4a29b4aa141c0ffc8566);
+            
+    
+            var popup_0dd9d45792164f2aa2d94120c7cd4ce6 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_2387cfcb18b049b3a770cd82da3b232c = $(`<div id="html_2387cfcb18b049b3a770cd82da3b232c" style="width: 100.0%; height: 100.0%;">Templeton&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>352</td> <tr><td>#&nbsp;European&nbsp;</td><td>250</td></table></div>`)[0];
+                popup_0dd9d45792164f2aa2d94120c7cd4ce6.setContent(html_2387cfcb18b049b3a770cd82da3b232c);
+            
+
+            marker_c76a2d2fabbb45c2adc1e15564e435ba.bindPopup(popup_0dd9d45792164f2aa2d94120c7cd4ce6)
+            ;
+
+            
+        
+    
+        var marker_619f1ea5ccbc4439b42079d69ea656ca = L.marker(
+            [-43.533479, 172.525337],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_dc32dcfe79624dfaab4fbafcb48cffec = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_619f1ea5ccbc4439b42079d69ea656ca.setIcon(icon_dc32dcfe79624dfaab4fbafcb48cffec);
+            
+    
+            var popup_6ed99b8170f14ac9901df26813efdeaf = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d2d15a87aa22486b9c9989bd43d8926e = $(`<div id="html_d2d15a87aa22486b9c9989bd43d8926e" style="width: 100.0%; height: 100.0%;">St&nbsp;Bernadette's&nbsp;School&nbsp;(Hornby)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>121</td> <tr><td>#&nbsp;European&nbsp;</td><td>37</td></table></div>`)[0];
+                popup_6ed99b8170f14ac9901df26813efdeaf.setContent(html_d2d15a87aa22486b9c9989bd43d8926e);
+            
+
+            marker_619f1ea5ccbc4439b42079d69ea656ca.bindPopup(popup_6ed99b8170f14ac9901df26813efdeaf)
+            ;
+
+            
+        
+    
+        var marker_ec337fa611cb4dbeb1358247abd32026 = L.marker(
+            [-43.577069, 172.51305],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_9b197506b08949709edc3de5743cfdc6 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ec337fa611cb4dbeb1358247abd32026.setIcon(icon_9b197506b08949709edc3de5743cfdc6);
+            
+    
+            var popup_9235c53abccb416490293cfd5954cc9d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_57dbea7d21ac4768a5357e12a03b7883 = $(`<div id="html_57dbea7d21ac4768a5357e12a03b7883" style="width: 100.0%; height: 100.0%;">Prebbleton&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>461</td> <tr><td>#&nbsp;European&nbsp;</td><td>366</td></table></div>`)[0];
+                popup_9235c53abccb416490293cfd5954cc9d.setContent(html_57dbea7d21ac4768a5357e12a03b7883);
+            
+
+            marker_ec337fa611cb4dbeb1358247abd32026.bindPopup(popup_9235c53abccb416490293cfd5954cc9d)
+            ;
+
+            
+        
+    
+        var marker_74fbadaaab5a4f01abbd5901729687a0 = L.marker(
+            [-43.533358, 172.56413500000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_9505a36c6e154beeaa5ea01987f8f06f = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_74fbadaaab5a4f01abbd5901729687a0.setIcon(icon_9505a36c6e154beeaa5ea01987f8f06f);
+            
+    
+            var popup_ee4561deffee416997f9b7688746d5f6 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4071b03a64314c289b530058e9be706c = $(`<div id="html_4071b03a64314c289b530058e9be706c" style="width: 100.0%; height: 100.0%;">Riccarton&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>287</td> <tr><td>#&nbsp;European&nbsp;</td><td>53</td></table></div>`)[0];
+                popup_ee4561deffee416997f9b7688746d5f6.setContent(html_4071b03a64314c289b530058e9be706c);
+            
+
+            marker_74fbadaaab5a4f01abbd5901729687a0.bindPopup(popup_ee4561deffee416997f9b7688746d5f6)
+            ;
+
+            
+        
+    
+        var marker_2248adb94819480b89de787000183a15 = L.marker(
+            [-43.517891, 172.544696],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_9adcadc3a1344770944484f675ca1300 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2248adb94819480b89de787000183a15.setIcon(icon_9adcadc3a1344770944484f675ca1300);
+            
+    
+            var popup_7855946b6dd5433daa67c7af155dd713 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_df282a584ca54b0d89e0600f2e1ad016 = $(`<div id="html_df282a584ca54b0d89e0600f2e1ad016" style="width: 100.0%; height: 100.0%;">Russley&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>441</td> <tr><td>#&nbsp;European&nbsp;</td><td>249</td></table></div>`)[0];
+                popup_7855946b6dd5433daa67c7af155dd713.setContent(html_df282a584ca54b0d89e0600f2e1ad016);
+            
+
+            marker_2248adb94819480b89de787000183a15.bindPopup(popup_7855946b6dd5433daa67c7af155dd713)
+            ;
+
+            
+        
+    
+        var marker_5a26acf3efd14d51a9f6bafd18a1503e = L.marker(
+            [-43.508308, 172.66163600000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_773708478ee547da983964d9202a4905 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5a26acf3efd14d51a9f6bafd18a1503e.setIcon(icon_773708478ee547da983964d9202a4905);
+            
+    
+            var popup_b078809453454522b6e240c439c20d1c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a26c2da99c02473c8857c485b059ba1b = $(`<div id="html_a26c2da99c02473c8857c485b059ba1b" style="width: 100.0%; height: 100.0%;">Shirley&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>158</td> <tr><td>#&nbsp;European&nbsp;</td><td>73</td></table></div>`)[0];
+                popup_b078809453454522b6e240c439c20d1c.setContent(html_a26c2da99c02473c8857c485b059ba1b);
+            
+
+            marker_5a26acf3efd14d51a9f6bafd18a1503e.bindPopup(popup_b078809453454522b6e240c439c20d1c)
+            ;
+
+            
+        
+    
+        var marker_952aa6f0005a4b0a83aa160113afc14e = L.marker(
+            [-43.562872, 172.64548],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_6b6c42b4bd214e4898bf54b70a31dd29 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_952aa6f0005a4b0a83aa160113afc14e.setIcon(icon_6b6c42b4bd214e4898bf54b70a31dd29);
+            
+    
+            var popup_764600884f444c958828fda48d4d4c9f = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5b75e039878145b682f109b5eb1ba0ed = $(`<div id="html_5b75e039878145b682f109b5eb1ba0ed" style="width: 100.0%; height: 100.0%;">Beckenham&nbsp;Te&nbsp;Kura&nbsp;o&nbsp;Pūroto<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>466</td> <tr><td>#&nbsp;European&nbsp;</td><td>363</td></table></div>`)[0];
+                popup_764600884f444c958828fda48d4d4c9f.setContent(html_5b75e039878145b682f109b5eb1ba0ed);
+            
+
+            marker_952aa6f0005a4b0a83aa160113afc14e.bindPopup(popup_764600884f444c958828fda48d4d4c9f)
+            ;
+
+            
+        
+    
+        var marker_45a12247ccb6420687f84fb721c4e735 = L.marker(
+            [-43.453613, 172.627294],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_bad6cd9c25be4217b86551ab99498941 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_45a12247ccb6420687f84fb721c4e735.setIcon(icon_bad6cd9c25be4217b86551ab99498941);
+            
+    
+            var popup_43801194c6764261b66d4ae27cd01a76 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d7c9a0ca76ae4ea6bfd65871d2e3b1ff = $(`<div id="html_d7c9a0ca76ae4ea6bfd65871d2e3b1ff" style="width: 100.0%; height: 100.0%;">Belfast&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>495</td> <tr><td>#&nbsp;European&nbsp;</td><td>324</td></table></div>`)[0];
+                popup_43801194c6764261b66d4ae27cd01a76.setContent(html_d7c9a0ca76ae4ea6bfd65871d2e3b1ff);
+            
+
+            marker_45a12247ccb6420687f84fb721c4e735.bindPopup(popup_43801194c6764261b66d4ae27cd01a76)
+            ;
+
+            
+        
+    
+        var marker_5bac70a2cd984426bbf7373a98e96ee9 = L.marker(
+            [-43.481802, 172.603787],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_50b5f8b917ed47f99531fd70c0e473c2 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5bac70a2cd984426bbf7373a98e96ee9.setIcon(icon_50b5f8b917ed47f99531fd70c0e473c2);
+            
+    
+            var popup_cd6aacdf383548a1b69ddea6437d418a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b93132b0443446188d3bf00dbe4d7ede = $(`<div id="html_b93132b0443446188d3bf00dbe4d7ede" style="width: 100.0%; height: 100.0%;">Casebrook&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>459</td> <tr><td>#&nbsp;European&nbsp;</td><td>317</td></table></div>`)[0];
+                popup_cd6aacdf383548a1b69ddea6437d418a.setContent(html_b93132b0443446188d3bf00dbe4d7ede);
+            
+
+            marker_5bac70a2cd984426bbf7373a98e96ee9.bindPopup(popup_cd6aacdf383548a1b69ddea6437d418a)
+            ;
+
+            
+        
+    
+        var marker_b83eaca189c04a208a8341c547e73776 = L.marker(
+            [-43.555657000000004, 172.664481],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_d504764310c244b1b0630aeca281b0d5 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b83eaca189c04a208a8341c547e73776.setIcon(icon_d504764310c244b1b0630aeca281b0d5);
+            
+    
+            var popup_0797950d5cbe4bbaadfaeb39a2977e00 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_3c47b7901a4e48d0b4c6a618164bf47f = $(`<div id="html_3c47b7901a4e48d0b4c6a618164bf47f" style="width: 100.0%; height: 100.0%;">Opawa&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>334</td> <tr><td>#&nbsp;European&nbsp;</td><td>238</td></table></div>`)[0];
+                popup_0797950d5cbe4bbaadfaeb39a2977e00.setContent(html_3c47b7901a4e48d0b4c6a618164bf47f);
+            
+
+            marker_b83eaca189c04a208a8341c547e73776.bindPopup(popup_0797950d5cbe4bbaadfaeb39a2977e00)
+            ;
+
+            
+        
+    
+        var marker_2e95a57475624951a7df7cce300575af = L.marker(
+            [-43.510462, 172.583783],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_2ea4d19fbf114033a90048d344cbc2f9 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2e95a57475624951a7df7cce300575af.setIcon(icon_2ea4d19fbf114033a90048d344cbc2f9);
+            
+    
+            var popup_1d8971a9e4a5401ebafea1ce26f393d5 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_66cf5ad15bf64262a58ae0c4c9425328 = $(`<div id="html_66cf5ad15bf64262a58ae0c4c9425328" style="width: 100.0%; height: 100.0%;">Cobham&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>686</td> <tr><td>#&nbsp;European&nbsp;</td><td>382</td></table></div>`)[0];
+                popup_1d8971a9e4a5401ebafea1ce26f393d5.setContent(html_66cf5ad15bf64262a58ae0c4c9425328);
+            
+
+            marker_2e95a57475624951a7df7cce300575af.bindPopup(popup_1d8971a9e4a5401ebafea1ce26f393d5)
+            ;
+
+            
+        
+    
+        var marker_39c14d5754ab4ab989e8ceeb1f19b1ae = L.marker(
+            [-43.530602, 172.58549299999999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_5273f1b9d3fd4b319e1b1b99c9feb278 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_39c14d5754ab4ab989e8ceeb1f19b1ae.setIcon(icon_5273f1b9d3fd4b319e1b1b99c9feb278);
+            
+    
+            var popup_c95b33dc16c64967ba6513157c88e435 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_11fbcb265b954e3eb76179e8c82bab89 = $(`<div id="html_11fbcb265b954e3eb76179e8c82bab89" style="width: 100.0%; height: 100.0%;">Kirkwood&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>326</td> <tr><td>#&nbsp;European&nbsp;</td><td>220</td></table></div>`)[0];
+                popup_c95b33dc16c64967ba6513157c88e435.setContent(html_11fbcb265b954e3eb76179e8c82bab89);
+            
+
+            marker_39c14d5754ab4ab989e8ceeb1f19b1ae.bindPopup(popup_c95b33dc16c64967ba6513157c88e435)
+            ;
+
+            
+        
+    
+        var marker_beb6c8b34e97487e99adbfd66d5956e7 = L.marker(
+            [-43.510409, 172.615399],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_03fdcae68c814f8383cfd747e7b0ab79 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_beb6c8b34e97487e99adbfd66d5956e7.setIcon(icon_03fdcae68c814f8383cfd747e7b0ab79);
+            
+    
+            var popup_6d00ae1570f8498bbc663ef6310b8e48 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_554f614adcb049848f3f4aded713780f = $(`<div id="html_554f614adcb049848f3f4aded713780f" style="width: 100.0%; height: 100.0%;">Heaton&nbsp;Normal&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>549</td> <tr><td>#&nbsp;European&nbsp;</td><td>403</td></table></div>`)[0];
+                popup_6d00ae1570f8498bbc663ef6310b8e48.setContent(html_554f614adcb049848f3f4aded713780f);
+            
+
+            marker_beb6c8b34e97487e99adbfd66d5956e7.bindPopup(popup_6d00ae1570f8498bbc663ef6310b8e48)
+            ;
+
+            
+        
+    
+        var marker_8a1c0ba7d0004c82825e0c005282beb0 = L.marker(
+            [-43.524097, 172.55948899999999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_98fb39b9a1a3424a8e0c11e295e7ba8b = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8a1c0ba7d0004c82825e0c005282beb0.setIcon(icon_98fb39b9a1a3424a8e0c11e295e7ba8b);
+            
+    
+            var popup_ea33116160b2436790cd1887dfcbf6b8 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_eea665da4ab94a64b9cf811e65516eb0 = $(`<div id="html_eea665da4ab94a64b9cf811e65516eb0" style="width: 100.0%; height: 100.0%;">Avonhead&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>597</td> <tr><td>#&nbsp;European&nbsp;</td><td>254</td></table></div>`)[0];
+                popup_ea33116160b2436790cd1887dfcbf6b8.setContent(html_eea665da4ab94a64b9cf811e65516eb0);
+            
+
+            marker_8a1c0ba7d0004c82825e0c005282beb0.bindPopup(popup_ea33116160b2436790cd1887dfcbf6b8)
+            ;
+
+            
+        
+    
+        var marker_62eb8ba124cc40f1848bc00bdb93fa2a = L.marker(
+            [-43.602799, 172.467937],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_45806f5561ae42009233eb2f923144a1 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_62eb8ba124cc40f1848bc00bdb93fa2a.setIcon(icon_45806f5561ae42009233eb2f923144a1);
+            
+    
+            var popup_4d68e69f66e543ffafbbf202c4a0c0b8 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_fcd92acd408d4ae68eb64674f4f1cece = $(`<div id="html_fcd92acd408d4ae68eb64674f4f1cece" style="width: 100.0%; height: 100.0%;">Broadfield&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>152</td> <tr><td>#&nbsp;European&nbsp;</td><td>121</td></table></div>`)[0];
+                popup_4d68e69f66e543ffafbbf202c4a0c0b8.setContent(html_fcd92acd408d4ae68eb64674f4f1cece);
+            
+
+            marker_62eb8ba124cc40f1848bc00bdb93fa2a.bindPopup(popup_4d68e69f66e543ffafbbf202c4a0c0b8)
+            ;
+
+            
+        
+    
+        var marker_caeed6dc82a249f09e2926684066885f = L.marker(
+            [-43.510189000000004, 172.502181],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_ae04f3144df842a7a13cc9dc89dff23c = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_caeed6dc82a249f09e2926684066885f.setIcon(icon_ae04f3144df842a7a13cc9dc89dff23c);
+            
+    
+            var popup_5abd534810ab410ba56884dc304182a1 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_e967745d676c40f794264952a8788045 = $(`<div id="html_e967745d676c40f794264952a8788045" style="width: 100.0%; height: 100.0%;">Yaldhurst&nbsp;Model&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>5.0</td> <tr><td>#&nbsp;Students</td><td>152</td> <tr><td>#&nbsp;European&nbsp;</td><td>117</td></table></div>`)[0];
+                popup_5abd534810ab410ba56884dc304182a1.setContent(html_e967745d676c40f794264952a8788045);
+            
+
+            marker_caeed6dc82a249f09e2926684066885f.bindPopup(popup_5abd534810ab410ba56884dc304182a1)
+            ;
+
+            
+        
+    
+        var marker_87f047482a48422fbde9773e4ec713ec = L.marker(
+            [-43.576413, 172.63253799999998],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_a953808d74614931904668b9f1d73009 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_87f047482a48422fbde9773e4ec713ec.setIcon(icon_a953808d74614931904668b9f1d73009);
+            
+    
+            var popup_b1a3c3d3a827405186e0a4907ea68184 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_66c42bba2a2443709ca8b1b027d650ee = $(`<div id="html_66c42bba2a2443709ca8b1b027d650ee" style="width: 100.0%; height: 100.0%;">Cashmere&nbsp;Primary&nbsp;Te&nbsp;Pae&nbsp;Kererū<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>459</td> <tr><td>#&nbsp;European&nbsp;</td><td>379</td></table></div>`)[0];
+                popup_b1a3c3d3a827405186e0a4907ea68184.setContent(html_66c42bba2a2443709ca8b1b027d650ee);
+            
+
+            marker_87f047482a48422fbde9773e4ec713ec.bindPopup(popup_b1a3c3d3a827405186e0a4907ea68184)
+            ;
+
+            
+        
+    
+        var marker_05a79986fe7a4150b9ac857207b95e8f = L.marker(
+            [-43.405992, 172.623348],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_7f55796a02f74f00a3fc4f1bbee3adca = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_05a79986fe7a4150b9ac857207b95e8f.setIcon(icon_7f55796a02f74f00a3fc4f1bbee3adca);
+            
+    
+            var popup_d16361480986498991acebab3967c8bd = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a122420949844c8e935ef16b1d556c5a = $(`<div id="html_a122420949844c8e935ef16b1d556c5a" style="width: 100.0%; height: 100.0%;">Clarkville&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>197</td> <tr><td>#&nbsp;European&nbsp;</td><td>158</td></table></div>`)[0];
+                popup_d16361480986498991acebab3967c8bd.setContent(html_a122420949844c8e935ef16b1d556c5a);
+            
+
+            marker_05a79986fe7a4150b9ac857207b95e8f.bindPopup(popup_d16361480986498991acebab3967c8bd)
+            ;
+
+            
+        
+    
+        var marker_8a166088d9164473ad6f81735e5768a7 = L.marker(
+            [-43.579871000000004, 172.70887],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_2f4db1edffd448a5966661bf492f1a99 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8a166088d9164473ad6f81735e5768a7.setIcon(icon_2f4db1edffd448a5966661bf492f1a99);
+            
+    
+            var popup_cde16504dc4b4bb6bde8b51e02dc60e9 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_0dc3df9424fd4de9a94470f4c2fa1473 = $(`<div id="html_0dc3df9424fd4de9a94470f4c2fa1473" style="width: 100.0%; height: 100.0%;">Heathcote&nbsp;Valley&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>249</td> <tr><td>#&nbsp;European&nbsp;</td><td>204</td></table></div>`)[0];
+                popup_cde16504dc4b4bb6bde8b51e02dc60e9.setContent(html_0dc3df9424fd4de9a94470f4c2fa1473);
+            
+
+            marker_8a166088d9164473ad6f81735e5768a7.bindPopup(popup_cde16504dc4b4bb6bde8b51e02dc60e9)
+            ;
+
+            
+        
+    
+        var marker_eaa4a8f3558e46b3a5cc03b058850a20 = L.marker(
+            [-43.546061, 172.612749],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_7e439d1ea2274e32b9e5d21c2e0171cc = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_eaa4a8f3558e46b3a5cc03b058850a20.setIcon(icon_7e439d1ea2274e32b9e5d21c2e0171cc);
+            
+    
+            var popup_a24ec8c7af894f1aaaef037a9f11f6cf = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a75c80f3efaf4faf88b5cc0e15966f74 = $(`<div id="html_a75c80f3efaf4faf88b5cc0e15966f74" style="width: 100.0%; height: 100.0%;">Sacred&nbsp;Heart&nbsp;School&nbsp;(Christchurch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>169</td> <tr><td>#&nbsp;European&nbsp;</td><td>26</td></table></div>`)[0];
+                popup_a24ec8c7af894f1aaaef037a9f11f6cf.setContent(html_a75c80f3efaf4faf88b5cc0e15966f74);
+            
+
+            marker_eaa4a8f3558e46b3a5cc03b058850a20.bindPopup(popup_a24ec8c7af894f1aaaef037a9f11f6cf)
+            ;
+
+            
+        
+    
+        var marker_478adca046ed4c6bb3050a92def1b2c9 = L.marker(
+            [-43.564783, 172.607072],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_3f05bd8f4db64c83954f91e0e63b117b = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_478adca046ed4c6bb3050a92def1b2c9.setIcon(icon_3f05bd8f4db64c83954f91e0e63b117b);
+            
+    
+            var popup_527e3bc53f10469b8cec2f644140bc49 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_2bfac46a225b446eb67b85adac1036b9 = $(`<div id="html_2bfac46a225b446eb67b85adac1036b9" style="width: 100.0%; height: 100.0%;">Our&nbsp;Lady&nbsp;of&nbsp;the&nbsp;Assumption&nbsp;School&nbsp;(Chch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>282</td> <tr><td>#&nbsp;European&nbsp;</td><td>230</td></table></div>`)[0];
+                popup_527e3bc53f10469b8cec2f644140bc49.setContent(html_2bfac46a225b446eb67b85adac1036b9);
+            
+
+            marker_478adca046ed4c6bb3050a92def1b2c9.bindPopup(popup_527e3bc53f10469b8cec2f644140bc49)
+            ;
+
+            
+        
+    
+        var marker_f1ff3c51902f40029e11ab51a8837b56 = L.marker(
+            [-43.53621, 172.559117],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_c989e2f0ec634bed8ccc1e36e4d4a280 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f1ff3c51902f40029e11ab51a8837b56.setIcon(icon_c989e2f0ec634bed8ccc1e36e4d4a280);
+            
+    
+            var popup_81eb7934e0664735b6fe99dbe5d48082 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b3beb7eed392481ba7a501414e587b63 = $(`<div id="html_b3beb7eed392481ba7a501414e587b63" style="width: 100.0%; height: 100.0%;">Our&nbsp;Lady&nbsp;of&nbsp;Victories<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>205</td> <tr><td>#&nbsp;European&nbsp;</td><td>71</td></table></div>`)[0];
+                popup_81eb7934e0664735b6fe99dbe5d48082.setContent(html_b3beb7eed392481ba7a501414e587b63);
+            
+
+            marker_f1ff3c51902f40029e11ab51a8837b56.bindPopup(popup_81eb7934e0664735b6fe99dbe5d48082)
+            ;
+
+            
+        
+    
+        var marker_764ecd53ad364d599b20dee39920222c = L.marker(
+            [-43.480595, 172.705623],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_2292988130eb4ce894594364d0f3d6aa = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_764ecd53ad364d599b20dee39920222c.setIcon(icon_2292988130eb4ce894594364d0f3d6aa);
+            
+    
+            var popup_4d64fc9ec02d4be687bed83a23a624bc = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_35d7c38e47e3469ca1e0330b74672aaa = $(`<div id="html_35d7c38e47e3469ca1e0330b74672aaa" style="width: 100.0%; height: 100.0%;">Parkview&nbsp;Pārua<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>410</td> <tr><td>#&nbsp;European&nbsp;</td><td>285</td></table></div>`)[0];
+                popup_4d64fc9ec02d4be687bed83a23a624bc.setContent(html_35d7c38e47e3469ca1e0330b74672aaa);
+            
+
+            marker_764ecd53ad364d599b20dee39920222c.bindPopup(popup_4d64fc9ec02d4be687bed83a23a624bc)
+            ;
+
+            
+        
+    
+        var marker_0c531bc2d05d4afdbcf0bb0a3c42b15c = L.marker(
+            [-43.473153, 172.695976],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_33c046f352ca4acc8ec82d55491d0f6a = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0c531bc2d05d4afdbcf0bb0a3c42b15c.setIcon(icon_33c046f352ca4acc8ec82d55491d0f6a);
+            
+    
+            var popup_2107c1d3356241a3918227187444de50 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_6a6f3a21c3f347fa91f7464bf0990c88 = $(`<div id="html_6a6f3a21c3f347fa91f7464bf0990c88" style="width: 100.0%; height: 100.0%;">Queenspark&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>551</td> <tr><td>#&nbsp;European&nbsp;</td><td>445</td></table></div>`)[0];
+                popup_2107c1d3356241a3918227187444de50.setContent(html_6a6f3a21c3f347fa91f7464bf0990c88);
+            
+
+            marker_0c531bc2d05d4afdbcf0bb0a3c42b15c.bindPopup(popup_2107c1d3356241a3918227187444de50)
+            ;
+
+            
+        
+    
+        var marker_fc37bd1e438f43eeab03f8c0df688632 = L.marker(
+            [-43.550378, 172.685572],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_3d4e0bf35a94441f9c39afd5a7b05834 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_fc37bd1e438f43eeab03f8c0df688632.setIcon(icon_3d4e0bf35a94441f9c39afd5a7b05834);
+            
+    
+            var popup_210d0395db4a42fca15c50143528580b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_9f87769f84a94b24bd2d8f803583a7c2 = $(`<div id="html_9f87769f84a94b24bd2d8f803583a7c2" style="width: 100.0%; height: 100.0%;">St&nbsp;Anne's&nbsp;School&nbsp;(Woolston)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>136</td> <tr><td>#&nbsp;European&nbsp;</td><td>47</td></table></div>`)[0];
+                popup_210d0395db4a42fca15c50143528580b.setContent(html_9f87769f84a94b24bd2d8f803583a7c2);
+            
+
+            marker_fc37bd1e438f43eeab03f8c0df688632.bindPopup(popup_210d0395db4a42fca15c50143528580b)
+            ;
+
+            
+        
+    
+        var marker_73dd11e4cd9647f08cbf7cc56c830464 = L.marker(
+            [-43.472023, 172.66474],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_a366e5f3dc934c14a477b87223378abb = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_73dd11e4cd9647f08cbf7cc56c830464.setIcon(icon_a366e5f3dc934c14a477b87223378abb);
+            
+    
+            var popup_0733e3823eaa4eaca7dfac0de6e89c87 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_efaeeb60d1614fb1b7813738faba2b40 = $(`<div id="html_efaeeb60d1614fb1b7813738faba2b40" style="width: 100.0%; height: 100.0%;">Marshland&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>462</td> <tr><td>#&nbsp;European&nbsp;</td><td>344</td></table></div>`)[0];
+                popup_0733e3823eaa4eaca7dfac0de6e89c87.setContent(html_efaeeb60d1614fb1b7813738faba2b40);
+            
+
+            marker_73dd11e4cd9647f08cbf7cc56c830464.bindPopup(popup_0733e3823eaa4eaca7dfac0de6e89c87)
+            ;
+
+            
+        
+    
+        var marker_5cd2dbd777d14fdd8487b85e78d4d619 = L.marker(
+            [-43.562443, 172.715918],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_b5a747aa0e604284bede4941cbd4933e = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5cd2dbd777d14fdd8487b85e78d4d619.setIcon(icon_b5a747aa0e604284bede4941cbd4933e);
+            
+    
+            var popup_cd25ac0cad9e43b89a65d55e010c95ad = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5ceb8aa45dd247158aa142819992e450 = $(`<div id="html_5ceb8aa45dd247158aa142819992e450" style="width: 100.0%; height: 100.0%;">Mt&nbsp;Pleasant&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>345</td> <tr><td>#&nbsp;European&nbsp;</td><td>272</td></table></div>`)[0];
+                popup_cd25ac0cad9e43b89a65d55e010c95ad.setContent(html_5ceb8aa45dd247158aa142819992e450);
+            
+
+            marker_5cd2dbd777d14fdd8487b85e78d4d619.bindPopup(popup_cd25ac0cad9e43b89a65d55e010c95ad)
+            ;
+
+            
+        
+    
+        var marker_5ab0ad039aae43b09fa6908343e1ff89 = L.marker(
+            [-43.505937, 172.723715],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_96b83c8f0d0e4e5381028d297a3b51c4 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5ab0ad039aae43b09fa6908343e1ff89.setIcon(icon_96b83c8f0d0e4e5381028d297a3b51c4);
+            
+    
+            var popup_06010f6ef0e146ecb39eccfaecd69e5e = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_70c91fc1a178409aa8a138ff99c0511f = $(`<div id="html_70c91fc1a178409aa8a138ff99c0511f" style="width: 100.0%; height: 100.0%;">New&nbsp;Brighton&nbsp;Catholic&nbsp;School&nbsp;(Chch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>186</td> <tr><td>#&nbsp;European&nbsp;</td><td>124</td></table></div>`)[0];
+                popup_06010f6ef0e146ecb39eccfaecd69e5e.setContent(html_70c91fc1a178409aa8a138ff99c0511f);
+            
+
+            marker_5ab0ad039aae43b09fa6908343e1ff89.bindPopup(popup_06010f6ef0e146ecb39eccfaecd69e5e)
+            ;
+
+            
+        
+    
+        var marker_fc7b318a41344203936960c3f1b6cafc = L.marker(
+            [-43.617664000000005, 172.532321],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_65b58bb114844a9f925712e7bebc8ccd = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_fc7b318a41344203936960c3f1b6cafc.setIcon(icon_65b58bb114844a9f925712e7bebc8ccd);
+            
+    
+            var popup_894f256b6a204a098481be077d6e6cc3 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_73d64bf55b514e86b790009d2eeb0ba5 = $(`<div id="html_73d64bf55b514e86b790009d2eeb0ba5" style="width: 100.0%; height: 100.0%;">Ladbrooks&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>139</td> <tr><td>#&nbsp;European&nbsp;</td><td>128</td></table></div>`)[0];
+                popup_894f256b6a204a098481be077d6e6cc3.setContent(html_73d64bf55b514e86b790009d2eeb0ba5);
+            
+
+            marker_fc7b318a41344203936960c3f1b6cafc.bindPopup(popup_894f256b6a204a098481be077d6e6cc3)
+            ;
+
+            
+        
+    
+        var marker_52210ea990e740c0b860a560f3ba36c2 = L.marker(
+            [-43.554154, 172.687446],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_d224fe4094c240028c4580919ddf5c2b = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_52210ea990e740c0b860a560f3ba36c2.setIcon(icon_d224fe4094c240028c4580919ddf5c2b);
+            
+    
+            var popup_4c4adb0fbb5c434bb2bf74cc5af35dc4 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5220ca3ef6c6489286b6424416ad44d2 = $(`<div id="html_5220ca3ef6c6489286b6424416ad44d2" style="width: 100.0%; height: 100.0%;">Bamford&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>135</td> <tr><td>#&nbsp;European&nbsp;</td><td>77</td></table></div>`)[0];
+                popup_4c4adb0fbb5c434bb2bf74cc5af35dc4.setContent(html_5220ca3ef6c6489286b6424416ad44d2);
+            
+
+            marker_52210ea990e740c0b860a560f3ba36c2.bindPopup(popup_4c4adb0fbb5c434bb2bf74cc5af35dc4)
+            ;
+
+            
+        
+    
+        var marker_e535a7ce42d44c8cbb854ecab383da15 = L.marker(
+            [-43.55216, 172.62532099999999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_bc88dd0cf05443d1bcf220438c76300b = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e535a7ce42d44c8cbb854ecab383da15.setIcon(icon_bc88dd0cf05443d1bcf220438c76300b);
+            
+    
+            var popup_b4e71607fd5c4ddbb52a2b3a98edf030 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d8e49312207d4d438d19dcf293d91d02 = $(`<div id="html_d8e49312207d4d438d19dcf293d91d02" style="width: 100.0%; height: 100.0%;">Christchurch&nbsp;South&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>512</td> <tr><td>#&nbsp;European&nbsp;</td><td>375</td></table></div>`)[0];
+                popup_b4e71607fd5c4ddbb52a2b3a98edf030.setContent(html_d8e49312207d4d438d19dcf293d91d02);
+            
+
+            marker_e535a7ce42d44c8cbb854ecab383da15.bindPopup(popup_b4e71607fd5c4ddbb52a2b3a98edf030)
+            ;
+
+            
+        
+    
+        var marker_46839e3a5f6a4411badb9fcfd93067ef = L.marker(
+            [-43.623981, 172.649982],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_c8664d1dc26342f2bfd27f31fdfabb54 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_46839e3a5f6a4411badb9fcfd93067ef.setIcon(icon_c8664d1dc26342f2bfd27f31fdfabb54);
+            
+    
+            var popup_5c6a4e84d6af43de82daab7385ec5c78 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_2b30667af6974f1d94e4f107d7ffc9f8 = $(`<div id="html_2b30667af6974f1d94e4f107d7ffc9f8" style="width: 100.0%; height: 100.0%;">Governors&nbsp;Bay&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>82</td> <tr><td>#&nbsp;European&nbsp;</td><td>70</td></table></div>`)[0];
+                popup_5c6a4e84d6af43de82daab7385ec5c78.setContent(html_2b30667af6974f1d94e4f107d7ffc9f8);
+            
+
+            marker_46839e3a5f6a4411badb9fcfd93067ef.bindPopup(popup_5c6a4e84d6af43de82daab7385ec5c78)
+            ;
+
+            
+        
+    
+        var marker_80cb3896471a46afbf1206b5e8c1e85f = L.marker(
+            [-43.528053, 172.628547],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_f735db695be34be9939df22269d51e08 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_80cb3896471a46afbf1206b5e8c1e85f.setIcon(icon_f735db695be34be9939df22269d51e08);
+            
+    
+            var popup_7d98366b6f904adda966b91c0c7332ca = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_30d2f9bd088146f58fdfbfc5cdab31ba = $(`<div id="html_30d2f9bd088146f58fdfbfc5cdab31ba" style="width: 100.0%; height: 100.0%;">The&nbsp;Cathedral&nbsp;Grammar&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>200</td> <tr><td>#&nbsp;European&nbsp;</td><td>134</td></table></div>`)[0];
+                popup_7d98366b6f904adda966b91c0c7332ca.setContent(html_30d2f9bd088146f58fdfbfc5cdab31ba);
+            
+
+            marker_80cb3896471a46afbf1206b5e8c1e85f.bindPopup(popup_7d98366b6f904adda966b91c0c7332ca)
+            ;
+
+            
+        
+    
+        var marker_6e2754a6cad4428fb65cee1cd9aba60a = L.marker(
+            [-43.546473999999996, 172.68923],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_43f488888399441fba21fee4c358b971 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6e2754a6cad4428fb65cee1cd9aba60a.setIcon(icon_43f488888399441fba21fee4c358b971);
+            
+    
+            var popup_7742dc5509c047fa9ce50b455276420b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d5161891c5eb41ceab7ad5e1fe81415a = $(`<div id="html_d5161891c5eb41ceab7ad5e1fe81415a" style="width: 100.0%; height: 100.0%;">Tamariki&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>53</td> <tr><td>#&nbsp;European&nbsp;</td><td>45</td></table></div>`)[0];
+                popup_7742dc5509c047fa9ce50b455276420b.setContent(html_d5161891c5eb41ceab7ad5e1fe81415a);
+            
+
+            marker_6e2754a6cad4428fb65cee1cd9aba60a.bindPopup(popup_7742dc5509c047fa9ce50b455276420b)
+            ;
+
+            
+        
+    
+        var marker_5552b6a1c5b54abda38546c94028e264 = L.marker(
+            [-43.520216999999995, 172.654818],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_c98ec1a3f76c48049085dec9df0e41e0 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5552b6a1c5b54abda38546c94028e264.setIcon(icon_c98ec1a3f76c48049085dec9df0e41e0);
+            
+    
+            var popup_944976ac762047e2b84200052aa5c31f = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_bda45dcb366744049dc48aff5f43f67b = $(`<div id="html_bda45dcb366744049dc48aff5f43f67b" style="width: 100.0%; height: 100.0%;">Jean&nbsp;Seabrook&nbsp;Memorial&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>99.0</td> <tr><td>#&nbsp;Students</td><td>16</td> <tr><td>#&nbsp;European&nbsp;</td><td>12</td></table></div>`)[0];
+                popup_944976ac762047e2b84200052aa5c31f.setContent(html_bda45dcb366744049dc48aff5f43f67b);
+            
+
+            marker_5552b6a1c5b54abda38546c94028e264.bindPopup(popup_944976ac762047e2b84200052aa5c31f)
+            ;
+
+            
+        
+    
+        var marker_c5c8636b89a0454aaf191c83d7c94d00 = L.marker(
+            [-43.570857000000004, 172.537925],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_33afc71f90c04ed6b130ac944fcc5519 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c5c8636b89a0454aaf191c83d7c94d00.setIcon(icon_33afc71f90c04ed6b130ac944fcc5519);
+            
+    
+            var popup_696f2310b9124a3d838e3f43ee6c5aa5 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d85ab578908f45fb82c1a531100e7c04 = $(`<div id="html_d85ab578908f45fb82c1a531100e7c04" style="width: 100.0%; height: 100.0%;">Knights&nbsp;Stream&nbsp;School-&nbsp;Mingimingi&nbsp;Hautoa<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>93</td> <tr><td>#&nbsp;European&nbsp;</td><td>53</td></table></div>`)[0];
+                popup_696f2310b9124a3d838e3f43ee6c5aa5.setContent(html_d85ab578908f45fb82c1a531100e7c04);
+            
+
+            marker_c5c8636b89a0454aaf191c83d7c94d00.bindPopup(popup_696f2310b9124a3d838e3f43ee6c5aa5)
+            ;
+
+            
+        
+    
+        var marker_f77d2a76e855492d8660f3c00d9930c4 = L.marker(
+            [-43.602339, 172.72316],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_a1c0f12201c242e08f54e8a072f29aae = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f77d2a76e855492d8660f3c00d9930c4.setIcon(icon_a1c0f12201c242e08f54e8a072f29aae);
+            
+    
+            var popup_de5e4c635da54cd28009022a700b4ead = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_ab25b12e614344b292fbbeb50f304c42 = $(`<div id="html_ab25b12e614344b292fbbeb50f304c42" style="width: 100.0%; height: 100.0%;">Lyttelton&nbsp;Primary&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>201</td> <tr><td>#&nbsp;European&nbsp;</td><td>156</td></table></div>`)[0];
+                popup_de5e4c635da54cd28009022a700b4ead.setContent(html_ab25b12e614344b292fbbeb50f304c42);
+            
+
+            marker_f77d2a76e855492d8660f3c00d9930c4.bindPopup(popup_de5e4c635da54cd28009022a700b4ead)
+            ;
+
+            
+        
+    
+        var marker_5ff92583a663453fb006e04bfaad3d49 = L.marker(
+            [-43.499787, 172.639385],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_5182bc6237ad4aa9a140cb84861d3f97 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5ff92583a663453fb006e04bfaad3d49.setIcon(icon_5182bc6237ad4aa9a140cb84861d3f97);
+            
+    
+            var popup_3787233e251a4bc89c03e2c7856df74b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_0d0b57ac5d9b4d80a62b2e74f574a00f = $(`<div id="html_0d0b57ac5d9b4d80a62b2e74f574a00f" style="width: 100.0%; height: 100.0%;">St&nbsp;Francis&nbsp;of&nbsp;Assisi&nbsp;Catholic&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>344</td> <tr><td>#&nbsp;European&nbsp;</td><td>262</td></table></div>`)[0];
+                popup_3787233e251a4bc89c03e2c7856df74b.setContent(html_0d0b57ac5d9b4d80a62b2e74f574a00f);
+            
+
+            marker_5ff92583a663453fb006e04bfaad3d49.bindPopup(popup_3787233e251a4bc89c03e2c7856df74b)
+            ;
+
+            
+        
+    
+        var marker_6e21f26358244c248994817092cc12c9 = L.marker(
+            [-43.545666, 172.672631],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_f16d14bd2fd94ae484bba111d551b999 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6e21f26358244c248994817092cc12c9.setIcon(icon_f16d14bd2fd94ae484bba111d551b999);
+            
+    
+            var popup_76d7843ae8c54b7684ca40131701d09b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1ad92ee06d8a4eaeb4a84090c41ba5c1 = $(`<div id="html_1ad92ee06d8a4eaeb4a84090c41ba5c1" style="width: 100.0%; height: 100.0%;">Te&nbsp;Waka&nbsp;Unua&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>2.0</td> <tr><td>#&nbsp;Students</td><td>463</td> <tr><td>#&nbsp;European&nbsp;</td><td>149</td></table></div>`)[0];
+                popup_76d7843ae8c54b7684ca40131701d09b.setContent(html_1ad92ee06d8a4eaeb4a84090c41ba5c1);
+            
+
+            marker_6e21f26358244c248994817092cc12c9.bindPopup(popup_76d7843ae8c54b7684ca40131701d09b)
+            ;
+
+            
+        
+    
+        var marker_98317dae08644542b6518c18b00f2aca = L.marker(
+            [-43.548984000000004, 172.648604],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_f81bf68c9b034348ba0ddcd8d9dfd3de = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_98317dae08644542b6518c18b00f2aca.setIcon(icon_f81bf68c9b034348ba0ddcd8d9dfd3de);
+            
+    
+            var popup_0f14c4859fbd4cbaa8071e9c1f85b154 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b44dcc0f6e5d4e62a3c1329072bfab20 = $(`<div id="html_b44dcc0f6e5d4e62a3c1329072bfab20" style="width: 100.0%; height: 100.0%;">Waltham&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>249</td> <tr><td>#&nbsp;European&nbsp;</td><td>96</td></table></div>`)[0];
+                popup_0f14c4859fbd4cbaa8071e9c1f85b154.setContent(html_b44dcc0f6e5d4e62a3c1329072bfab20);
+            
+
+            marker_98317dae08644542b6518c18b00f2aca.bindPopup(popup_0f14c4859fbd4cbaa8071e9c1f85b154)
+            ;
+
+            
+        
+    
+        var marker_d3a927a267054f84bda1dbe5ae46997b = L.marker(
+            [-43.510655, 172.724985],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_a0b0cca27fa546898554f54b66716c94 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d3a927a267054f84bda1dbe5ae46997b.setIcon(icon_a0b0cca27fa546898554f54b66716c94);
+            
+    
+            var popup_6100aa0363ea4070b322a0a0469f7bdf = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_bd86a9c03c344b32808f1051d0c33228 = $(`<div id="html_bd86a9c03c344b32808f1051d0c33228" style="width: 100.0%; height: 100.0%;">Nova&nbsp;Montessori&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>44</td> <tr><td>#&nbsp;European&nbsp;</td><td>29</td></table></div>`)[0];
+                popup_6100aa0363ea4070b322a0a0469f7bdf.setContent(html_bd86a9c03c344b32808f1051d0c33228);
+            
+
+            marker_d3a927a267054f84bda1dbe5ae46997b.bindPopup(popup_6100aa0363ea4070b322a0a0469f7bdf)
+            ;
+
+            
+        
+    
+        var marker_79f187b52f744ed889f3d901e415d227 = L.marker(
+            [-43.4961, 172.7177],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_2881d0cd1815419f9c3ebdee159c7161 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_79f187b52f744ed889f3d901e415d227.setIcon(icon_2881d0cd1815419f9c3ebdee159c7161);
+            
+    
+            var popup_15f5873dbbcd42eca638da8157e1fbb8 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_307b0b710e5b4e809135fecfc86ff1c0 = $(`<div id="html_307b0b710e5b4e809135fecfc86ff1c0" style="width: 100.0%; height: 100.0%;">Rāwhiti&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>519</td> <tr><td>#&nbsp;European&nbsp;</td><td>322</td></table></div>`)[0];
+                popup_15f5873dbbcd42eca638da8157e1fbb8.setContent(html_307b0b710e5b4e809135fecfc86ff1c0);
+            
+
+            marker_79f187b52f744ed889f3d901e415d227.bindPopup(popup_15f5873dbbcd42eca638da8157e1fbb8)
+            ;
+
+            
+        
+    
+        var marker_6cf8981482814ff789de68d850f0662e = L.marker(
+            [-43.516638, 172.623003],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_c11ba169a0cd4cfa971e071e7d8d9547 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6cf8981482814ff789de68d850f0662e.setIcon(icon_c11ba169a0cd4cfa971e071e7d8d9547);
+            
+    
+            var popup_af6bc12ed777438f8abccc2ba7fb41b2 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_b202c48c9ec54b968b31a3d489479183 = $(`<div id="html_b202c48c9ec54b968b31a3d489479183" style="width: 100.0%; height: 100.0%;">Selwyn&nbsp;House&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>229</td> <tr><td>#&nbsp;European&nbsp;</td><td>176</td></table></div>`)[0];
+                popup_af6bc12ed777438f8abccc2ba7fb41b2.setContent(html_b202c48c9ec54b968b31a3d489479183);
+            
+
+            marker_6cf8981482814ff789de68d850f0662e.bindPopup(popup_af6bc12ed777438f8abccc2ba7fb41b2)
+            ;
+
+            
+        
+    
+        var marker_62481c4608014a82a23c48adf89cc88c = L.marker(
+            [-43.444592, 172.660379],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_cc9338d6883147efbaa2d8332ae282f5 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_62481c4608014a82a23c48adf89cc88c.setIcon(icon_cc9338d6883147efbaa2d8332ae282f5);
+            
+    
+            var popup_bebc867dd126484ca65f47a1617e398a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_0961ba1b47c94504acdee2b609d31189 = $(`<div id="html_0961ba1b47c94504acdee2b609d31189" style="width: 100.0%; height: 100.0%;">Ouruhia&nbsp;Model&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>79</td> <tr><td>#&nbsp;European&nbsp;</td><td>61</td></table></div>`)[0];
+                popup_bebc867dd126484ca65f47a1617e398a.setContent(html_0961ba1b47c94504acdee2b609d31189);
+            
+
+            marker_62481c4608014a82a23c48adf89cc88c.bindPopup(popup_bebc867dd126484ca65f47a1617e398a)
+            ;
+
+            
+        
+    
+        var marker_dbb92fa2576f47a3a31907cb9dea24b2 = L.marker(
+            [-43.579766, 172.758806],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_d9556e517135474c92411fffdee604cb = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dbb92fa2576f47a3a31907cb9dea24b2.setIcon(icon_d9556e517135474c92411fffdee604cb);
+            
+    
+            var popup_f0475630fb1f44fa95f7f1f20806c99e = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7bcd10d8ef0b4772baf150c47802c5e1 = $(`<div id="html_7bcd10d8ef0b4772baf150c47802c5e1" style="width: 100.0%; height: 100.0%;">Redcliffs&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>180</td> <tr><td>#&nbsp;European&nbsp;</td><td>135</td></table></div>`)[0];
+                popup_f0475630fb1f44fa95f7f1f20806c99e.setContent(html_7bcd10d8ef0b4772baf150c47802c5e1);
+            
+
+            marker_dbb92fa2576f47a3a31907cb9dea24b2.bindPopup(popup_f0475630fb1f44fa95f7f1f20806c99e)
+            ;
+
+            
+        
+    
+        var marker_cfddbb4baf1f4a77b7f27662568875e7 = L.marker(
+            [-43.510492, 172.55857],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_00715438d524430ab7cd1db18589f394 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cfddbb4baf1f4a77b7f27662568875e7.setIcon(icon_00715438d524430ab7cd1db18589f394);
+            
+    
+            var popup_1a9bff72d1e54c41b3d49f623169356a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_ac915617544e4f59877b88cc127b73e4 = $(`<div id="html_ac915617544e4f59877b88cc127b73e4" style="width: 100.0%; height: 100.0%;">Merrin&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>464</td> <tr><td>#&nbsp;European&nbsp;</td><td>202</td></table></div>`)[0];
+                popup_1a9bff72d1e54c41b3d49f623169356a.setContent(html_ac915617544e4f59877b88cc127b73e4);
+            
+
+            marker_cfddbb4baf1f4a77b7f27662568875e7.bindPopup(popup_1a9bff72d1e54c41b3d49f623169356a)
+            ;
+
+            
+        
+    
+        var marker_55c52812791c4f189866e5ed8edcebce = L.marker(
+            [-43.571578, 172.564642],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_df2c9dedf3244d52a3f7c46e064dd0f9 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_55c52812791c4f189866e5ed8edcebce.setIcon(icon_df2c9dedf3244d52a3f7c46e064dd0f9);
+            
+    
+            var popup_4480973dcbdd4ffa87481a3561d73b79 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_017370419e144a0caa6888972d8207ad = $(`<div id="html_017370419e144a0caa6888972d8207ad" style="width: 100.0%; height: 100.0%;">Oaklands&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>566</td> <tr><td>#&nbsp;European&nbsp;</td><td>322</td></table></div>`)[0];
+                popup_4480973dcbdd4ffa87481a3561d73b79.setContent(html_017370419e144a0caa6888972d8207ad);
+            
+
+            marker_55c52812791c4f189866e5ed8edcebce.bindPopup(popup_4480973dcbdd4ffa87481a3561d73b79)
+            ;
+
+            
+        
+    
+        var marker_fe41aaa9f4ad461a907e625a4f33f636 = L.marker(
+            [-43.487494, 172.577246],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_6c6e41bfd95147cda3a2594d0d581c59 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_fe41aaa9f4ad461a907e625a4f33f636.setIcon(icon_6c6e41bfd95147cda3a2594d0d581c59);
+            
+    
+            var popup_ecd2ce0bc78e4a18b1be6b51dd4c42fb = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_06b9937a8f524a56807bc76e0978d6af = $(`<div id="html_06b9937a8f524a56807bc76e0978d6af" style="width: 100.0%; height: 100.0%;">Breens&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>301</td> <tr><td>#&nbsp;European&nbsp;</td><td>210</td></table></div>`)[0];
+                popup_ecd2ce0bc78e4a18b1be6b51dd4c42fb.setContent(html_06b9937a8f524a56807bc76e0978d6af);
+            
+
+            marker_fe41aaa9f4ad461a907e625a4f33f636.bindPopup(popup_ecd2ce0bc78e4a18b1be6b51dd4c42fb)
+            ;
+
+            
+        
+    
+        var marker_c274c198973f4518be64df8fe6155c78 = L.marker(
+            [-43.509803000000005, 172.688984],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_007ef0b6f116436d8948a43ed159be34 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c274c198973f4518be64df8fe6155c78.setIcon(icon_007ef0b6f116436d8948a43ed159be34);
+            
+    
+            var popup_04a373fd64f446b6acd2d20db2650295 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_06590ea4776f4c98b515054c3a77f1a2 = $(`<div id="html_06590ea4776f4c98b515054c3a77f1a2" style="width: 100.0%; height: 100.0%;">Chisnallwood&nbsp;Intermediate<table><tr><td>Type</td><td>Intermediate</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>5.0</td> <tr><td>#&nbsp;Students</td><td>690</td> <tr><td>#&nbsp;European&nbsp;</td><td>440</td></table></div>`)[0];
+                popup_04a373fd64f446b6acd2d20db2650295.setContent(html_06590ea4776f4c98b515054c3a77f1a2);
+            
+
+            marker_c274c198973f4518be64df8fe6155c78.bindPopup(popup_04a373fd64f446b6acd2d20db2650295)
+            ;
+
+            
+        
+    
+        var marker_9c710bb7c04f4e7380a71b781fda9fd4 = L.marker(
+            [-43.509149, 172.576628],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_115a5db5d01a4873b99aeb43906755ad = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9c710bb7c04f4e7380a71b781fda9fd4.setIcon(icon_115a5db5d01a4873b99aeb43906755ad);
+            
+    
+            var popup_28bc0801f7d44733b41bc11aa2c490d2 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_31dd98cf40144e2eb4d31f5fde2e90fd = $(`<div id="html_31dd98cf40144e2eb4d31f5fde2e90fd" style="width: 100.0%; height: 100.0%;">Christ&nbsp;The&nbsp;King&nbsp;School&nbsp;(Burnside)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>314</td> <tr><td>#&nbsp;European&nbsp;</td><td>198</td></table></div>`)[0];
+                popup_28bc0801f7d44733b41bc11aa2c490d2.setContent(html_31dd98cf40144e2eb4d31f5fde2e90fd);
+            
+
+            marker_9c710bb7c04f4e7380a71b781fda9fd4.bindPopup(popup_28bc0801f7d44733b41bc11aa2c490d2)
+            ;
+
+            
+        
+    
+        var marker_8044427d747843e98238082acfc1d9bc = L.marker(
+            [-43.529641999999996, 172.64835],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_b5595286393342fcbfd9c77fc9800d6c = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8044427d747843e98238082acfc1d9bc.setIcon(icon_b5595286393342fcbfd9c77fc9800d6c);
+            
+    
+            var popup_6a817a1ce593449788fab1f7e833af52 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7731f01cc58f4cbbba1cd85eb7fcecfb = $(`<div id="html_7731f01cc58f4cbbba1cd85eb7fcecfb" style="width: 100.0%; height: 100.0%;">Christchurch&nbsp;East&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>294</td> <tr><td>#&nbsp;European&nbsp;</td><td>62</td></table></div>`)[0];
+                popup_6a817a1ce593449788fab1f7e833af52.setContent(html_7731f01cc58f4cbbba1cd85eb7fcecfb);
+            
+
+            marker_8044427d747843e98238082acfc1d9bc.bindPopup(popup_6a817a1ce593449788fab1f7e833af52)
+            ;
+
+            
+        
+    
+        var marker_5f7a2842388e47509fd02efc3cce3c49 = L.marker(
+            [-43.59065, 172.56937299999998],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_2a948ed5e81647658c8fb4a20ee3eaeb = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5f7a2842388e47509fd02efc3cce3c49.setIcon(icon_2a948ed5e81647658c8fb4a20ee3eaeb);
+            
+    
+            var popup_62a7b2f365844a8b9c8d68624249605b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_aa27da4dd2ac4745af290782b1fe5f56 = $(`<div id="html_aa27da4dd2ac4745af290782b1fe5f56" style="width: 100.0%; height: 100.0%;">Halswell&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>639</td> <tr><td>#&nbsp;European&nbsp;</td><td>460</td></table></div>`)[0];
+                popup_62a7b2f365844a8b9c8d68624249605b.setContent(html_aa27da4dd2ac4745af290782b1fe5f56);
+            
+
+            marker_5f7a2842388e47509fd02efc3cce3c49.bindPopup(popup_62a7b2f365844a8b9c8d68624249605b)
+            ;
+
+            
+        
+    
+        var marker_3e247822ef434e11a0e967ebaf5d6af7 = L.marker(
+            [-43.552882000000004, 172.659298],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_104c7128b2fd4084a2ace857f2357a86 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3e247822ef434e11a0e967ebaf5d6af7.setIcon(icon_104c7128b2fd4084a2ace857f2357a86);
+            
+    
+            var popup_509552161ee34c98b61a017a5ca5c0c9 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_55160e9664c742a29e379bdc9fb2617b = $(`<div id="html_55160e9664c742a29e379bdc9fb2617b" style="width: 100.0%; height: 100.0%;">St&nbsp;Mark's&nbsp;School&nbsp;(Christchurch)<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>228</td> <tr><td>#&nbsp;European&nbsp;</td><td>192</td></table></div>`)[0];
+                popup_509552161ee34c98b61a017a5ca5c0c9.setContent(html_55160e9664c742a29e379bdc9fb2617b);
+            
+
+            marker_3e247822ef434e11a0e967ebaf5d6af7.bindPopup(popup_509552161ee34c98b61a017a5ca5c0c9)
+            ;
+
+            
+        
+    
+        var marker_c1547cf79b42488da445375e9491d779 = L.marker(
+            [-43.53477, 172.633057],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_e8c10be2ca0e460cbdce48a2300f3ab1 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c1547cf79b42488da445375e9491d779.setIcon(icon_e8c10be2ca0e460cbdce48a2300f3ab1);
+            
+    
+            var popup_f450158d9dce4ab0b655316da9813606 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_ba78bb60f5d04a81b5038cc3c913af76 = $(`<div id="html_ba78bb60f5d04a81b5038cc3c913af76" style="width: 100.0%; height: 100.0%;">St&nbsp;Michael's&nbsp;Church&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>79</td> <tr><td>#&nbsp;European&nbsp;</td><td>53</td></table></div>`)[0];
+                popup_f450158d9dce4ab0b655316da9813606.setContent(html_ba78bb60f5d04a81b5038cc3c913af76);
+            
+
+            marker_c1547cf79b42488da445375e9491d779.bindPopup(popup_f450158d9dce4ab0b655316da9813606)
+            ;
+
+            
+        
+    
+        var marker_1dafb1f03f70428ebea5859d3b55b74d = L.marker(
+            [-43.582665000000006, 172.54845],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_192fdf26564242a2923f998e268c8c4e = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1dafb1f03f70428ebea5859d3b55b74d.setIcon(icon_192fdf26564242a2923f998e268c8c4e);
+            
+    
+            var popup_86cddf26c7ce4eb5bbdc619a14566685 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_0d40eb02ee984d04bd9ac2663f94c2fc = $(`<div id="html_0d40eb02ee984d04bd9ac2663f94c2fc" style="width: 100.0%; height: 100.0%;">Seven&nbsp;Oaks&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>99.0</td> <tr><td>#&nbsp;Students</td><td>43</td> <tr><td>#&nbsp;European&nbsp;</td><td>39</td></table></div>`)[0];
+                popup_86cddf26c7ce4eb5bbdc619a14566685.setContent(html_0d40eb02ee984d04bd9ac2663f94c2fc);
+            
+
+            marker_1dafb1f03f70428ebea5859d3b55b74d.bindPopup(popup_86cddf26c7ce4eb5bbdc619a14566685)
+            ;
+
+            
+        
+    
+        var marker_a888576b9d5e43e1be9a6e47213ecf04 = L.marker(
+            [-43.521884, 172.58910600000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_6ba6b18858d54270accbe5fff7d55d34);
+        
+    
+
+                var icon_143d757a647b4276b5192045206cebe8 = L.AwesomeMarkers.icon({
+                    icon: 'italic',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a888576b9d5e43e1be9a6e47213ecf04.setIcon(icon_143d757a647b4276b5192045206cebe8);
+            
+    
+            var popup_d6e45088d5b04ab6a6c041fa0ef0ca51 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5915370370334fb287555b5f1fdddc6a = $(`<div id="html_5915370370334fb287555b5f1fdddc6a" style="width: 100.0%; height: 100.0%;">Medbury&nbsp;Preparatory&nbsp;School<table><tr><td>Type</td><td>Full&nbsp;Primary</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>381</td> <tr><td>#&nbsp;European&nbsp;</td><td>285</td></table></div>`)[0];
+                popup_d6e45088d5b04ab6a6c041fa0ef0ca51.setContent(html_5915370370334fb287555b5f1fdddc6a);
+            
+
+            marker_a888576b9d5e43e1be9a6e47213ecf04.bindPopup(popup_d6e45088d5b04ab6a6c041fa0ef0ca51)
+            ;
+
+            
+        
+    
+            var feature_group_edcad7fe2e244ab484c287eab7d6cfe5 = L.featureGroup(
+                ).addTo(map_08f1875ab5314dcda13bbb27bf2255aa);
+        
+    
+        var marker_b32bf40ebcca480eb8407256adc26a43 = L.marker(
+            [-43.537238, 172.623],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_8a466e944ba64d2980b8ca3bd2fb1c7b = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b32bf40ebcca480eb8407256adc26a43.setIcon(icon_8a466e944ba64d2980b8ca3bd2fb1c7b);
+            
+    
+            var popup_c72ac0202364467ea22c273995788d74 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4cf3f93412f0471daccff9a53e68555d = $(`<div id="html_4cf3f93412f0471daccff9a53e68555d" style="width: 100.0%; height: 100.0%;">Hagley&nbsp;Community&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>2316</td> <tr><td>#&nbsp;European&nbsp;</td><td>1562</td></table></div>`)[0];
+                popup_c72ac0202364467ea22c273995788d74.setContent(html_4cf3f93412f0471daccff9a53e68555d);
+            
+
+            marker_b32bf40ebcca480eb8407256adc26a43.bindPopup(popup_c72ac0202364467ea22c273995788d74)
+            ;
+
+            
+        
+    
+        var marker_b0f92b6928054554b229113e0308f677 = L.marker(
+            [-43.538174, 172.527627],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_e336287c97c949f989b4e619d1e6b514 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b0f92b6928054554b229113e0308f677.setIcon(icon_e336287c97c949f989b4e619d1e6b514);
+            
+    
+            var popup_a9b472d19ffc4b1dab0234651ac0c47c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_192295a13b9440fa8905c6f87de9a463 = $(`<div id="html_192295a13b9440fa8905c6f87de9a463" style="width: 100.0%; height: 100.0%;">Hornby&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>702</td> <tr><td>#&nbsp;European&nbsp;</td><td>278</td></table></div>`)[0];
+                popup_a9b472d19ffc4b1dab0234651ac0c47c.setContent(html_192295a13b9440fa8905c6f87de9a463);
+            
+
+            marker_b0f92b6928054554b229113e0308f677.bindPopup(popup_a9b472d19ffc4b1dab0234651ac0c47c)
+            ;
+
+            
+        
+    
+        var marker_4b7607df5f5c4d978fff12596be410da = L.marker(
+            [-43.494015999999995, 172.648476],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_21a52e43bced4705a6a223827c62f904 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_4b7607df5f5c4d978fff12596be410da.setIcon(icon_21a52e43bced4705a6a223827c62f904);
+            
+    
+            var popup_5dd1ec0f526d410f94eb0739c8d36830 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5fc339de19df44b1977a6d62a55f8bf8 = $(`<div id="html_5fc339de19df44b1977a6d62a55f8bf8" style="width: 100.0%; height: 100.0%;">Mairehau&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>381</td> <tr><td>#&nbsp;European&nbsp;</td><td>228</td></table></div>`)[0];
+                popup_5dd1ec0f526d410f94eb0739c8d36830.setContent(html_5fc339de19df44b1977a6d62a55f8bf8);
+            
+
+            marker_4b7607df5f5c4d978fff12596be410da.bindPopup(popup_5dd1ec0f526d410f94eb0739c8d36830)
+            ;
+
+            
+        
+    
+        var marker_14555912c9794b6380b21fab7de79861 = L.marker(
+            [-43.537655, 172.646591],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_10fc2ce2b08b476484f50370b27bc4b3 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_14555912c9794b6380b21fab7de79861.setIcon(icon_10fc2ce2b08b476484f50370b27bc4b3);
+            
+    
+            var popup_5a69b5120eef43aaa8f89779bc70eb6d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f420422b3039473792fca1c47578a00c = $(`<div id="html_f420422b3039473792fca1c47578a00c" style="width: 100.0%; height: 100.0%;">Catholic&nbsp;Cathedral&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>462</td> <tr><td>#&nbsp;European&nbsp;</td><td>115</td></table></div>`)[0];
+                popup_5a69b5120eef43aaa8f89779bc70eb6d.setContent(html_f420422b3039473792fca1c47578a00c);
+            
+
+            marker_14555912c9794b6380b21fab7de79861.bindPopup(popup_5a69b5120eef43aaa8f89779bc70eb6d)
+            ;
+
+            
+        
+    
+        var marker_526c23f8cbe6409c882b2b0dff4781ad = L.marker(
+            [-43.53589, 172.566357],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_dddbafe3238d48f18c88f03fbb0c3917 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_526c23f8cbe6409c882b2b0dff4781ad.setIcon(icon_dddbafe3238d48f18c88f03fbb0c3917);
+            
+    
+            var popup_972e187d2106434096059c151a2d71cf = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_e1aa28c770f14c53a261447f97df553d = $(`<div id="html_e1aa28c770f14c53a261447f97df553d" style="width: 100.0%; height: 100.0%;">Riccarton&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>1105</td> <tr><td>#&nbsp;European&nbsp;</td><td>491</td></table></div>`)[0];
+                popup_972e187d2106434096059c151a2d71cf.setContent(html_e1aa28c770f14c53a261447f97df553d);
+            
+
+            marker_526c23f8cbe6409c882b2b0dff4781ad.bindPopup(popup_972e187d2106434096059c151a2d71cf)
+            ;
+
+            
+        
+    
+        var marker_454efe6e883149d6af4e1049eb1e5030 = L.marker(
+            [-43.491037, 172.606707],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_89fa18e7462541f68246e1aadb380b37 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_454efe6e883149d6af4e1049eb1e5030.setIcon(icon_89fa18e7462541f68246e1aadb380b37);
+            
+    
+            var popup_97023b35aa4145458954c39d0952266e = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1571ee2509af4539bc09c48186e35e86 = $(`<div id="html_1571ee2509af4539bc09c48186e35e86" style="width: 100.0%; height: 100.0%;">Papanui&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>7.0</td> <tr><td>#&nbsp;Students</td><td>1591</td> <tr><td>#&nbsp;European&nbsp;</td><td>981</td></table></div>`)[0];
+                popup_97023b35aa4145458954c39d0952266e.setContent(html_1571ee2509af4539bc09c48186e35e86);
+            
+
+            marker_454efe6e883149d6af4e1049eb1e5030.bindPopup(popup_97023b35aa4145458954c39d0952266e)
+            ;
+
+            
+        
+    
+        var marker_a472290d66454b36b889253e783dead3 = L.marker(
+            [-43.583346, 172.549805],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_91988460d6e3427bbad86621ed7c94f8 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a472290d66454b36b889253e783dead3.setIcon(icon_91988460d6e3427bbad86621ed7c94f8);
+            
+    
+            var popup_743f710c1a3e412ea9403bf3fdc98485 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_944d731599ea4629b929ccbb8fd1ce4c = $(`<div id="html_944d731599ea4629b929ccbb8fd1ce4c" style="width: 100.0%; height: 100.0%;">Seven&nbsp;Oaks&nbsp;Secondary&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>99.0</td> <tr><td>#&nbsp;Students</td><td>0</td> <tr><td>#&nbsp;European&nbsp;</td><td>0</td></table></div>`)[0];
+                popup_743f710c1a3e412ea9403bf3fdc98485.setContent(html_944d731599ea4629b929ccbb8fd1ce4c);
+            
+
+            marker_a472290d66454b36b889253e783dead3.bindPopup(popup_743f710c1a3e412ea9403bf3fdc98485)
+            ;
+
+            
+        
+    
+        var marker_6774976f94e5443fbba46ae83cd9b85f = L.marker(
+            [-43.524806, 172.598411],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_4027cf1eb6d2403dac88a6d094bc14f8 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6774976f94e5443fbba46ae83cd9b85f.setIcon(icon_4027cf1eb6d2403dac88a6d094bc14f8);
+            
+    
+            var popup_6345d119702645f4ad47e0956a7041b9 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4716c9b294a7459bbaf6983a0b01570a = $(`<div id="html_4716c9b294a7459bbaf6983a0b01570a" style="width: 100.0%; height: 100.0%;">Christchurch&nbsp;Boys'&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>1414</td> <tr><td>#&nbsp;European&nbsp;</td><td>1018</td></table></div>`)[0];
+                popup_6345d119702645f4ad47e0956a7041b9.setContent(html_4716c9b294a7459bbaf6983a0b01570a);
+            
+
+            marker_6774976f94e5443fbba46ae83cd9b85f.bindPopup(popup_6345d119702645f4ad47e0956a7041b9)
+            ;
+
+            
+        
+    
+        var marker_9b72873121ff49f5869ac7d6240f413a = L.marker(
+            [-43.539039, 172.64613500000002],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_ada56a88ad9949d496ce3e88caf1832b = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9b72873121ff49f5869ac7d6240f413a.setIcon(icon_ada56a88ad9949d496ce3e88caf1832b);
+            
+    
+            var popup_753038a1c5a246fd98884770570798d8 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f926fe7e799645ba9793a21f16aed83e = $(`<div id="html_f926fe7e799645ba9793a21f16aed83e" style="width: 100.0%; height: 100.0%;">Marian&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>372</td> <tr><td>#&nbsp;European&nbsp;</td><td>236</td></table></div>`)[0];
+                popup_753038a1c5a246fd98884770570798d8.setContent(html_f926fe7e799645ba9793a21f16aed83e);
+            
+
+            marker_9b72873121ff49f5869ac7d6240f413a.bindPopup(popup_753038a1c5a246fd98884770570798d8)
+            ;
+
+            
+        
+    
+        var marker_924055c2d5784d24b4f1276263463ffc = L.marker(
+            [-43.48405, 172.616864],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_0f820c79c31642efacb5779964b70c2c = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_924055c2d5784d24b4f1276263463ffc.setIcon(icon_0f820c79c31642efacb5779964b70c2c);
+            
+    
+            var popup_620f7b41338c44cab5c7468a8d25cfbd = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7642f511602f4d538c287fcddee04187 = $(`<div id="html_7642f511602f4d538c287fcddee04187" style="width: 100.0%; height: 100.0%;">St&nbsp;Bedes&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>823</td> <tr><td>#&nbsp;European&nbsp;</td><td>623</td></table></div>`)[0];
+                popup_620f7b41338c44cab5c7468a8d25cfbd.setContent(html_7642f511602f4d538c287fcddee04187);
+            
+
+            marker_924055c2d5784d24b4f1276263463ffc.bindPopup(popup_620f7b41338c44cab5c7468a8d25cfbd)
+            ;
+
+            
+        
+    
+        var marker_6fba4d5834384620ab949d7a5eea4bd6 = L.marker(
+            [-43.533607, 172.556203],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_7734713271a24742a9283e0c05b520d2 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6fba4d5834384620ab949d7a5eea4bd6.setIcon(icon_7734713271a24742a9283e0c05b520d2);
+            
+    
+            var popup_93b1e7f8f9164f8c8ee4457b57051f3d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5c7274174d8648db9ce74a8b4f06b672 = $(`<div id="html_5c7274174d8648db9ce74a8b4f06b672" style="width: 100.0%; height: 100.0%;">St&nbsp;Thomas&nbsp;of&nbsp;Canterbury&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>651</td> <tr><td>#&nbsp;European&nbsp;</td><td>393</td></table></div>`)[0];
+                popup_93b1e7f8f9164f8c8ee4457b57051f3d.setContent(html_5c7274174d8648db9ce74a8b4f06b672);
+            
+
+            marker_6fba4d5834384620ab949d7a5eea4bd6.bindPopup(popup_93b1e7f8f9164f8c8ee4457b57051f3d)
+            ;
+
+            
+        
+    
+        var marker_b02c552d82b94714aa1b4db17666387d = L.marker(
+            [-43.538762, 172.667655],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_b452d3f4d4fa4909b5bd76052dcc32ee = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b02c552d82b94714aa1b4db17666387d.setIcon(icon_b452d3f4d4fa4909b5bd76052dcc32ee);
+            
+    
+            var popup_af16fface12e402b8ef4ad6ce71ac300 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_bd7dce702c4342b68f9035cef78737d0 = $(`<div id="html_bd7dce702c4342b68f9035cef78737d0" style="width: 100.0%; height: 100.0%;">Linwood&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>3.0</td> <tr><td>#&nbsp;Students</td><td>764</td> <tr><td>#&nbsp;European&nbsp;</td><td>286</td></table></div>`)[0];
+                popup_af16fface12e402b8ef4ad6ce71ac300.setContent(html_bd7dce702c4342b68f9035cef78737d0);
+            
+
+            marker_b02c552d82b94714aa1b4db17666387d.bindPopup(popup_af16fface12e402b8ef4ad6ce71ac300)
+            ;
+
+            
+        
+    
+        var marker_81c84c878a154a14af5d8e4d48608091 = L.marker(
+            [-43.507315000000006, 172.577702],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_cb31131b173d43acb70cc1a683311caa = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_81c84c878a154a14af5d8e4d48608091.setIcon(icon_cb31131b173d43acb70cc1a683311caa);
+            
+    
+            var popup_2f4ab0b2434b486dbef8576693655189 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_941fbe6e50cc47a4bb9a5acfef70431e = $(`<div id="html_941fbe6e50cc47a4bb9a5acfef70431e" style="width: 100.0%; height: 100.0%;">Burnside&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>8.0</td> <tr><td>#&nbsp;Students</td><td>2525</td> <tr><td>#&nbsp;European&nbsp;</td><td>1304</td></table></div>`)[0];
+                popup_2f4ab0b2434b486dbef8576693655189.setContent(html_941fbe6e50cc47a4bb9a5acfef70431e);
+            
+
+            marker_81c84c878a154a14af5d8e4d48608091.bindPopup(popup_2f4ab0b2434b486dbef8576693655189)
+            ;
+
+            
+        
+    
+        var marker_76a0cb76dc1f4004a44343d8dd1a3733 = L.marker(
+            [-43.512343, 172.660827],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_ac11947fa0324cd4b6160d72996ea9cd = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_76a0cb76dc1f4004a44343d8dd1a3733.setIcon(icon_ac11947fa0324cd4b6160d72996ea9cd);
+            
+    
+            var popup_8c2a431e2c424cb882867f6c8234f980 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5dcccea8696240b0907c85eba39dca07 = $(`<div id="html_5dcccea8696240b0907c85eba39dca07" style="width: 100.0%; height: 100.0%;">Shirley&nbsp;Boys'&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>1287</td> <tr><td>#&nbsp;European&nbsp;</td><td>844</td></table></div>`)[0];
+                popup_8c2a431e2c424cb882867f6c8234f980.setContent(html_5dcccea8696240b0907c85eba39dca07);
+            
+
+            marker_76a0cb76dc1f4004a44343d8dd1a3733.bindPopup(popup_8c2a431e2c424cb882867f6c8234f980)
+            ;
+
+            
+        
+    
+        var marker_90bd7404a363454db360ff273724ed9f = L.marker(
+            [-43.529716, 172.62711399999998],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_248e2b7bf03847fb93bfe2f436e03b8b = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_90bd7404a363454db360ff273724ed9f.setIcon(icon_248e2b7bf03847fb93bfe2f436e03b8b);
+            
+    
+            var popup_43a7f807a4804e62904fd1be6b17827a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a34f40b0f12c45e9a0fd940bc420b866 = $(`<div id="html_a34f40b0f12c45e9a0fd940bc420b866" style="width: 100.0%; height: 100.0%;">Christ's&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>659</td> <tr><td>#&nbsp;European&nbsp;</td><td>537</td></table></div>`)[0];
+                popup_43a7f807a4804e62904fd1be6b17827a.setContent(html_a34f40b0f12c45e9a0fd940bc420b866);
+            
+
+            marker_90bd7404a363454db360ff273724ed9f.bindPopup(popup_43a7f807a4804e62904fd1be6b17827a)
+            ;
+
+            
+        
+    
+        var marker_c12c23235c624ca798e3599264993e6d = L.marker(
+            [-43.528304, 172.567561],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_0a97eb14bee04c1cac5cd546db699331 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c12c23235c624ca798e3599264993e6d.setIcon(icon_0a97eb14bee04c1cac5cd546db699331);
+            
+    
+            var popup_175572ebe47144fa990598eb1baf4dc6 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_e7a4aa8c21c44590bd4fb683705ae0cc = $(`<div id="html_e7a4aa8c21c44590bd4fb683705ae0cc" style="width: 100.0%; height: 100.0%;">Villa&nbsp;Maria&nbsp;College<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>853</td> <tr><td>#&nbsp;European&nbsp;</td><td>634</td></table></div>`)[0];
+                popup_175572ebe47144fa990598eb1baf4dc6.setContent(html_e7a4aa8c21c44590bd4fb683705ae0cc);
+            
+
+            marker_c12c23235c624ca798e3599264993e6d.bindPopup(popup_175572ebe47144fa990598eb1baf4dc6)
+            ;
+
+            
+        
+    
+        var marker_fe2dd92c494a4f5a9f91255e16ae90f3 = L.marker(
+            [-43.524293, 172.611366],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_2229283d01c24a599d9fddd93f00e9bc = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_fe2dd92c494a4f5a9f91255e16ae90f3.setIcon(icon_2229283d01c24a599d9fddd93f00e9bc);
+            
+    
+            var popup_745619895faf46cabfb197e34abe892d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_91bdd5ee1d3a491c9f1af95432ec4b2e = $(`<div id="html_91bdd5ee1d3a491c9f1af95432ec4b2e" style="width: 100.0%; height: 100.0%;">Christchurch&nbsp;Girls'&nbsp;High&nbsp;School&nbsp;-Te&nbsp;Kura&nbsp;o&nbsp;Hine&nbsp;Waiora<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>1227</td> <tr><td>#&nbsp;European&nbsp;</td><td>929</td></table></div>`)[0];
+                popup_745619895faf46cabfb197e34abe892d.setContent(html_91bdd5ee1d3a491c9f1af95432ec4b2e);
+            
+
+            marker_fe2dd92c494a4f5a9f91255e16ae90f3.bindPopup(popup_745619895faf46cabfb197e34abe892d)
+            ;
+
+            
+        
+    
+        var marker_bb7eb98c5b4645a796cebf0b6be39a5d = L.marker(
+            [-43.557675, 172.592774],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_95c621fa1fe041539611cc19a18840f0 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bb7eb98c5b4645a796cebf0b6be39a5d.setIcon(icon_95c621fa1fe041539611cc19a18840f0);
+            
+    
+            var popup_3e4ba3408acf4d41a9e08feb72ad2c1d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_9f31c159ec5c4cafa67f8d78bded104e = $(`<div id="html_9f31c159ec5c4cafa67f8d78bded104e" style="width: 100.0%; height: 100.0%;">Hillmorton&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>4.0</td> <tr><td>#&nbsp;Students</td><td>923</td> <tr><td>#&nbsp;European&nbsp;</td><td>478</td></table></div>`)[0];
+                popup_3e4ba3408acf4d41a9e08feb72ad2c1d.setContent(html_9f31c159ec5c4cafa67f8d78bded104e);
+            
+
+            marker_bb7eb98c5b4645a796cebf0b6be39a5d.bindPopup(popup_3e4ba3408acf4d41a9e08feb72ad2c1d)
+            ;
+
+            
+        
+    
+        var marker_0292df1b0bf142d58f61169ba3a9e293 = L.marker(
+            [-43.564565, 172.623852],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_e42ce13a9e334d7cbb4073920f196f9d = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0292df1b0bf142d58f61169ba3a9e293.setIcon(icon_e42ce13a9e334d7cbb4073920f196f9d);
+            
+    
+            var popup_e2247756404a458aa3a25e3a8732023c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_bd3b0f0d88e64e6ebf02074e020230d4 = $(`<div id="html_bd3b0f0d88e64e6ebf02074e020230d4" style="width: 100.0%; height: 100.0%;">Cashmere&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>9.0</td> <tr><td>#&nbsp;Students</td><td>2122</td> <tr><td>#&nbsp;European&nbsp;</td><td>1611</td></table></div>`)[0];
+                popup_e2247756404a458aa3a25e3a8732023c.setContent(html_bd3b0f0d88e64e6ebf02074e020230d4);
+            
+
+            marker_0292df1b0bf142d58f61169ba3a9e293.bindPopup(popup_e2247756404a458aa3a25e3a8732023c)
+            ;
+
+            
+        
+    
+        var marker_86aaf528b9c9428f863404378727e7a4 = L.marker(
+            [-43.524028, 172.66151399999998],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_8b9da7730aa04bd6a5fdb94528358e19 = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_86aaf528b9c9428f863404378727e7a4.setIcon(icon_8b9da7730aa04bd6a5fdb94528358e19);
+            
+    
+            var popup_ed1e5b2a62eb473387f7b8f36cf7ac33 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_fda6ff805f2c4dafa8aa6f383d8b684c = $(`<div id="html_fda6ff805f2c4dafa8aa6f383d8b684c" style="width: 100.0%; height: 100.0%;">Avonside&nbsp;Girls'&nbsp;High&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;9-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>6.0</td> <tr><td>#&nbsp;Students</td><td>1012</td> <tr><td>#&nbsp;European&nbsp;</td><td>625</td></table></div>`)[0];
+                popup_ed1e5b2a62eb473387f7b8f36cf7ac33.setContent(html_fda6ff805f2c4dafa8aa6f383d8b684c);
+            
+
+            marker_86aaf528b9c9428f863404378727e7a4.bindPopup(popup_ed1e5b2a62eb473387f7b8f36cf7ac33)
+            ;
+
+            
+        
+    
+        var marker_1d6de8aec16440d2890c43ccc48b40f2 = L.marker(
+            [-43.518898, 172.617779],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(feature_group_edcad7fe2e244ab484c287eab7d6cfe5);
+        
+    
+
+                var icon_6d5df22751cf4b63b26b680a5bf4ba6c = L.AwesomeMarkers.icon({
+                    icon: 'building',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'fa',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1d6de8aec16440d2890c43ccc48b40f2.setIcon(icon_6d5df22751cf4b63b26b680a5bf4ba6c);
+            
+    
+            var popup_16dec79ede694469a7bcca2ef3f19b64 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_1b0cad788f904d2fb984179a64e6daac = $(`<div id="html_1b0cad788f904d2fb984179a64e6daac" style="width: 100.0%; height: 100.0%;">Rangi&nbsp;Ruru&nbsp;Girls'&nbsp;School<table><tr><td>Type</td><td>Secondary&nbsp;(Year&nbsp;7-15)</td> <tr><td>CoEd?</td><td>Y</td> <tr><td>Decile</td><td>10.0</td> <tr><td>#&nbsp;Students</td><td>662</td> <tr><td>#&nbsp;European&nbsp;</td><td>523</td></table></div>`)[0];
+                popup_16dec79ede694469a7bcca2ef3f19b64.setContent(html_1b0cad788f904d2fb984179a64e6daac);
+            
+
+            marker_1d6de8aec16440d2890c43ccc48b40f2.bindPopup(popup_16dec79ede694469a7bcca2ef3f19b64)
+            ;
+
+            
+        
+    
+            var layer_control_a57f4779ac454cd49cbe4714bdc03dfe = {
+                base_layers : { "openstreetmap" : tile_layer_6c70888d7426474db57235dc7cf08958, },
+                overlays : { "Full primary and intermediate schools" : feature_group_6ba6b18858d54270accbe5fff7d55d34,"High schools" : feature_group_edcad7fe2e244ab484c287eab7d6cfe5, }
+                };
+            L.control.layers(
+                layer_control_a57f4779ac454cd49cbe4714bdc03dfe.base_layers,
+                layer_control_a57f4779ac454cd49cbe4714bdc03dfe.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_08f1875ab5314dcda13bbb27bf2255aa);
+            
+        
+</script>
