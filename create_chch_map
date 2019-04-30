@@ -4,6 +4,7 @@ import geopandas as gpd
 import pandas as pd
 import shapely
 import folium
+import folium.plugins
 
 # find Christchurch
 import geopy.geocoders
@@ -15,7 +16,7 @@ m = folium.Map(location=(chch.latitude, chch.longitude), zoom_start=13, control_
 
 # got the school zones from koordinates.com
 # https://koordinates.com/layer/743-nz-school-zones-sept-2010/?ex=1
-zones = gpd.read_file('school_zones/nz-school-zones-sept-2010.shp')
+#zones = gpd.read_file('school_zones/nz-school-zones-sept-2010.shp')
 #zones = zones.to_crs(epsg=3857)
 
 #foo = folium.features.GeoJson(zones, name='School zones')
@@ -37,8 +38,6 @@ schools.crs = {'init' :'epsg:4326'}    # this is basic latitude longitude
 # only bother with schools that are in the bounds of chch
 bb = [float(i) for i in chch.raw['boundingbox']]
 schools = schools.cx[bb[2]:bb[3], bb[0]:bb[1]]
-
-m = folium.Map(location=(chch.latitude, chch.longitude), zoom_start=13, control_scale=True)
 
 # the schools that can cater to intermediate aged pupils
 prim_group = folium.FeatureGroup("Full primary and intermediate schools")
@@ -72,12 +71,12 @@ for i, row in sc.iterrows():
 <tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
    ))
   
-
-# write it out
-
 m.add_child(prim_group)
 m.add_child(high_group)
+m.add_child(folium.plugins.MeasureControl(primary_length_unit='kilometers', primary_area_unit='hectares'))
 folium.LayerControl().add_to(m)
+
+
 
 
 
