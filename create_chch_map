@@ -52,7 +52,7 @@ for i, row in sc.iterrows():
 <tr><td>CoEd?</td><td>{}</td>
 <tr><td>Decile</td><td>{}</td>
 <tr><td>#&nbsp;Students</td><td>{}</td>
-<tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status else 'N', row.Decile, row.Total, row.European)
+<tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
    ))
   
 
@@ -69,7 +69,7 @@ for i, row in sc.iterrows():
 <tr><td>CoEd?</td><td>{}</td>
 <tr><td>Decile</td><td>{}</td>
 <tr><td>#&nbsp;Students</td><td>{}</td>
-<tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status else 'N', row.Decile, row.Total, row.European)
+<tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
    ))
   
 
