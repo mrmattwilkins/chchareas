@@ -78,46 +78,35 @@ def get_schools(boundingbox = None):
    schools.rename(columns={'geometry_y': 'zone'}, inplace=True)
    
    # the zone is a shapely polygon, for mapping with need a folium
-   # polygon, and a featuregroup to contain it (I'm pretty sure I need
-   # this, but we could try and add just the polygon and forget the
-   # featuregroup).  FIXME
+   # polygon
    for i, row in schools.iterrows():
-      if pd.isnull(row.zone): continue
-      latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
-      poly = folium.vector_layers.Polygon(latlons)
-      layer = folium.FeatureGroup(name='FOO'+row.Org_Name, overlay=True, control=False, show=False)
-      layer.add_child(poly)
-      schools.at[i, 'zonepoly'] = poly
-      schools.at[i, 'zonelayer'] = layer
-
+      if not pd.isnull(row.zone):
+         latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
+         schools.at[i, 'zonepoly'] = folium.vector_layers.Polygon(latlons)
 
    return schools
 
 # get the schools we are interested in
 schools = get_schools([float(i) for i in chch.raw['boundingbox']])
 
-# the schools that can cater to intermediate aged pupils
+# add school markers to correct group
 prim_group = folium.FeatureGroup("Full primary and intermediate schools")
 high_group = folium.FeatureGroup("High schools")
 for i, row in schools.iterrows():
-   if row.high:
-      high_group.add_child(row.marker)
-   else:
-      prim_group.add_child(row.marker)
+   (high_group if row.high else prim_group).add_child(row.marker)
 
-# add the zonelayer's to the map
+# add the zonepoly's to the map
 for i, row in schools.iterrows():
-   if pd.isnull(row.zone): continue
-   row.zonelayer.add_to(m)
+   if not pd.isnull(row.zonepoly): row.zonepoly.add_to(m)
 
-
-
+# add the rest
 m.add_child(prim_group)
 m.add_child(high_group)
 m.add_child(folium.plugins.MeasureControl(primary_length_unit='kilometers', primary_area_unit='hectares'))
 folium.LayerControl().add_to(m)
 
-
+# add the custom leaflet javascript code so when a marker is clicked
+# the zonepoly gets shown
 from branca.element import Element
 e = []
 for i, row in schools.iterrows():
@@ -130,7 +119,7 @@ for i, row in schools.iterrows():
     }} else {{
         {0}.addLayer({2});
    }}
-}}));""".format(m.get_name(), row.marker.get_name(), row.zonelayer.get_name()))
+}}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
 
 e = Element("\n".join(e))
 html = m.get_root()
