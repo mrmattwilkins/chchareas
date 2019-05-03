@@ -121,16 +121,38 @@ m.add_child(high_group)
 m.add_child(folium.plugins.MeasureControl(primary_length_unit='kilometers', primary_area_unit='hectares'))
 folium.LayerControl().add_to(m)
 
+######################################################################
 # add the custom leaflet javascript code so when a marker is clicked
 # the zonepoly gets shown
+#
+# the method followed is from FabeG on
+#  https://github.com/python-visualization/folium/issues/86
+# (see near the end posted around the end of April 2018)
+#
+
 from branca.element import Element
 e = []
+
+# the zonepoly's start as visible, remove them all
+for i, row in schools.iterrows():
+   if pd.notnull(row.zone): e.append("""{0}.remove();""".format(row.zonepoly.get_name()))
+
+#
+# using semiomant's suggestion on
+#  https://stackoverflow.com/questions/13698975/click-link-inside-leaflet-popup-and-do-javascript
+# this makes a function that is called on every popupopen and it
+# checks to make sure that their is a callback bound to every zonelink
+# 
+# to stop the callback being bound repeatedly, use Kondra Garus's
+# suggestion on
+#  https://stackoverflow.com/questions/6361465/how-to-check-if-click-event-is-already-bound-jquery
+# which is the :not(.bound) thing
+#
+e.append("""{0}.on('popupopen', function() {{""".format(m.get_name()))
 for i, row in schools.iterrows():
    if pd.isnull(row.zone): continue
-   e.append(
-"""{2}.remove();
-   {0}.on('popupopen', function() {{
-      $("#zonelink{1}").click(function(event) {{
+   e.append("""
+      $("#zonelink{1}:not(.bound)").addClass('bound').on('click', function(event) {{
          if({0}.hasLayer({2})) {{
             $(this).text('Show');
             {0}.removeLayer({2});
@@ -139,45 +161,14 @@ for i, row in schools.iterrows():
             {0}.addLayer({2});
          }}
       }}
-      )
-   }}
-);""".format(m.get_name(), row.School_Id, row.zonepoly.get_name()))
-
-#map_2cdb525e585e4b3c8520ce2075fd1621.on('popupopen', function() {
-#     $('.smallPolygonLink').click(function(event){
-#            if(map_2cdb525e585e4b3c8520ce2075fd1621.hasLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a)) {
-#         $('.smallPolygonLink').text('Show');
-#
-#               map_2cdb525e585e4b3c8520ce2075fd1621.removeLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a);
-#            } else {
-#         $('.smallPolygonLink').text('Hide');
-#               map_2cdb525e585e4b3c8520ce2075fd1621.addLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a);
-#            }
-#      }
-#     )
-#});
-
-
-
-#}}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
-
-# for i, row in schools.iterrows():
-#    if pd.isnull(row.zone): continue
-#    e.append(
-# """{2}.remove();
-#    {1}.on('click', (function(event) {{
-#     if({0}.hasLayer({2})) {{
-#         {0}.removeLayer({2});
-#     }} else {{
-#         {0}.addLayer({2});
-#    }}
-# }}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
-
+      )""".format(m.get_name(), row.School_Id, row.zonepoly.get_name()))
+e.append("});")
 
 e = Element("\n".join(e))
 html = m.get_root()
 html.script.get_root().render()
 html.script._children[e.get_name()] = e
+######################################################################
 
 
 
