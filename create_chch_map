@@ -58,11 +58,11 @@ def get_schools(boundingbox = None):
          # high schools get blue buildings, otherwise green I (for intermediate)
          icon = folium.Icon(color='blue', prefix='fa', icon='building') if row.high else folium.Icon(color='green',icon='italic'),
          popup=
-            """{}<table><tr><td>Type</td><td>{}</td>
+            """<a href="{}" target="_blank">{}</a><table><tr><td>Type</td><td>{}</td>
                <tr><td>CoEd?</td><td>{}</td>
                <tr><td>Decile</td><td>{}</td>
                <tr><td>#&nbsp;Students</td><td>{}</td>
-               <tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
+               <tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.URL if pd.notnull(row.URL) else '', row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
          )
       schools.at[i, 'marker'] = marker
 
@@ -80,7 +80,7 @@ def get_schools(boundingbox = None):
    # the zone is a shapely polygon, for mapping with need a folium
    # polygon
    for i, row in schools.iterrows():
-      if not pd.isnull(row.zone):
+      if pd.notnull(row.zone):
          latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
          schools.at[i, 'zonepoly'] = folium.vector_layers.Polygon(latlons)
 
@@ -97,7 +97,7 @@ for i, row in schools.iterrows():
 
 # add the zonepoly's to the map
 for i, row in schools.iterrows():
-   if not pd.isnull(row.zonepoly): row.zonepoly.add_to(m)
+   if pd.notnull(row.zonepoly): row.zonepoly.add_to(m)
 
 # add the rest
 m.add_child(prim_group)
