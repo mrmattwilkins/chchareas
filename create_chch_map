@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import geopandas as gpd
 import pandas as pd
@@ -51,21 +51,6 @@ def get_schools(boundingbox = None):
    # checking Org_Type startswith 'Second')
    schools['high'] = schools.Org_Type.str.startswith('Second')
 
-   # each school needs a marker for showing on the map
-   for i, row in schools.iterrows():
-      marker = folium.Marker(
-         location = [row.Latitude, row.Longitude],
-         # high schools get blue buildings, otherwise green I (for intermediate)
-         icon = folium.Icon(color='blue', prefix='fa', icon='building') if row.high else folium.Icon(color='green',icon='italic'),
-         popup=
-            """<a href="{}" target="_blank">{}</a><table><tr><td>Type</td><td>{}</td>
-               <tr><td>CoEd?</td><td>{}</td>
-               <tr><td>Decile</td><td>{}</td>
-               <tr><td>#&nbsp;Students</td><td>{}</td>
-               <tr><td>#&nbsp;European&nbsp;</td><td>{}</td></table>""".format(row.URL if pd.notnull(row.URL) else '', row.Org_Name.replace(' ', '&nbsp;'), row.Org_Type.replace(' ', '&nbsp;'), 'Y' if row.CoEd_Status == 'Co-Educational' else 'N', row.Decile, row.Total, row.European)
-         )
-      schools.at[i, 'marker'] = marker
-
    # some schools have zones, lets put those in for those that do.
    # Got the zone info from https://koordinates.com/layer/743-nz-school-zones-sept-2010/?ex=1
    zones = gpd.read_file('school_zones/nz-school-zones-sept-2010.shp')
@@ -83,6 +68,37 @@ def get_schools(boundingbox = None):
       if pd.notnull(row.zone):
          latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
          schools.at[i, 'zonepoly'] = folium.vector_layers.Polygon(latlons)
+
+   # each school needs a marker for showing on the map
+   for i, row in schools.iterrows():
+      marker = folium.Marker(
+         location = [row.Latitude, row.Longitude],
+         # high schools get blue buildings, otherwise green I (for intermediate)
+         icon = folium.Icon(color='blue', prefix='fa', icon='building') if row.high else folium.Icon(color='green',icon='italic'),
+         popup="""
+            <a href="{url}" target="_blank">{name}</a>
+            <table>
+            <tr><td>Type</td><td>{stype}</td>
+            <tr><td>CoEd?</td><td>{coed}</td>
+            <tr><td>Decile</td><td>{decile}</td>
+            <tr><td>#&nbsp;Students</td><td>{numstudents}</td>
+            <tr><td>#&nbsp;European&nbsp;</td><td>{numeuropeans}</td>
+            <tr><td>Zone</td><td>{zone}</td>
+            </table>""".format(
+                  url = row.URL if pd.notnull(row.URL) else '',
+                  name = row.Org_Name.replace(' ', '&nbsp;'),
+                  stype = row.Org_Type.replace(' ', '&nbsp;'),
+                  coed = 'Y' if row.CoEd_Status == 'Co-Educational' else 'N',
+                  decile = row.Decile,
+                  numstudents = row.Total,
+                  numeuropeans = row.European,
+                  sid = row.School_Id,
+                  zone = '<a id="zonelink%s" href="#">Show</a>' % row.School_Id if pd.notnull(row.zone) else 'None')
+         )
+
+      schools.at[i, 'marker'] = marker
+
+
 
    return schools
 
@@ -113,13 +129,50 @@ for i, row in schools.iterrows():
    if pd.isnull(row.zone): continue
    e.append(
 """{2}.remove();
-   {1}.on('click', (function(event) {{
-    if({0}.hasLayer({2})) {{
-        {0}.removeLayer({2});
-    }} else {{
-        {0}.addLayer({2});
+   {0}.on('popupopen', function() {{
+      $("#zonelink{1}").click(function(event) {{
+         if({0}.hasLayer({2})) {{
+            $(this).text('Show');
+            {0}.removeLayer({2});
+         }} else {{
+            $(this).text('Hide');
+            {0}.addLayer({2});
+         }}
+      }}
+      )
    }}
-}}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
+);""".format(m.get_name(), row.School_Id, row.zonepoly.get_name()))
+
+#map_2cdb525e585e4b3c8520ce2075fd1621.on('popupopen', function() {
+#     $('.smallPolygonLink').click(function(event){
+#            if(map_2cdb525e585e4b3c8520ce2075fd1621.hasLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a)) {
+#         $('.smallPolygonLink').text('Show');
+#
+#               map_2cdb525e585e4b3c8520ce2075fd1621.removeLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a);
+#            } else {
+#         $('.smallPolygonLink').text('Hide');
+#               map_2cdb525e585e4b3c8520ce2075fd1621.addLayer(polygon_d0b8399f70ab4f7681f96e5c76a4971a);
+#            }
+#      }
+#     )
+#});
+
+
+
+#}}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
+
+# for i, row in schools.iterrows():
+#    if pd.isnull(row.zone): continue
+#    e.append(
+# """{2}.remove();
+#    {1}.on('click', (function(event) {{
+#     if({0}.hasLayer({2})) {{
+#         {0}.removeLayer({2});
+#     }} else {{
+#         {0}.addLayer({2});
+#    }}
+# }}));""".format(m.get_name(), row.marker.get_name(), row.zonepoly.get_name()))
+
 
 e = Element("\n".join(e))
 html = m.get_root()
