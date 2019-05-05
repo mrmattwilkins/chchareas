@@ -9,7 +9,7 @@ import folium.plugins
 # find Christchurch
 import geopy.geocoders
 loca = geopy.geocoders.Nominatim(user_agent='MyChChAp')
-chch = loca.geocode('Christchurch',country_codes='New Zealand')
+chch = loca.geocode('Christchurch New Zealand')
 
 # make an interactive map of Christchurch
 m = folium.Map(location=(chch.latitude, chch.longitude), zoom_start=13, control_scale=True)
