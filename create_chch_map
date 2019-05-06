@@ -9,7 +9,7 @@ import folium.plugins
 # find Christchurch
 import geopy.geocoders
 loca = geopy.geocoders.Nominatim(user_agent='MyChChAp')
-chch = loca.geocode('Christchurch New Zealand')
+chch = loca.geocode('Christchurch, New Zealand')
 
 # make an interactive map of Christchurch
 m = folium.Map(location=(chch.latitude, chch.longitude), zoom_start=13, control_scale=True)
@@ -62,8 +62,7 @@ def get_schools(boundingbox = None):
    schools.drop(columns='SchoolID', inplace=True)
    schools.rename(columns={'geometry_y': 'zone'}, inplace=True)
    
-   # the zone is a shapely polygon, for mapping with need a folium
-   # polygon
+   # the zone is a shapely polygon, for mapping we need a folium polygon
    for i, row in schools.iterrows():
       if pd.notnull(row.zone):
          latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
@@ -97,11 +96,82 @@ def get_schools(boundingbox = None):
          )
 
       schools.at[i, 'marker'] = marker
-
-
-
    return schools
 
+
+def get_metro(boundingbox):
+   """Return the bus routes in optional boundingbox we are interested in."""
+
+   # the route data comes from
+   #  http://opendata.canterburymaps.govt.nz/datasets/-bus-route-directions/data
+   routes = gpd.read_file('metro/_Bus_Route_Directions.shp')
+   
+   # only want routes in bounds of chch
+   # boundingbox [ymin, ymax, xmin, xmax], but cx slicing takes # [xmin:xmax, ymin:ymax]
+   if boundingbox: routes = routes.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
+
+   # I found this in a css file on the metro website.  Bit of a pain
+   # it isn't included in the data file.  This maps the RouteNo to
+   # colour
+   no2colour = {
+				'A': '#F18600',
+				'F': '#005899',
+				'B': '#3ebced',
+				'O': '#f37021',
+				'P': '#554588',
+				'Y': '#ffc20e',
+				'Or': '#79bc43',
+				'17': '#ec008c',
+				'28': '#f79328',
+				'29': '#00539f',
+				'44': '#0074ad',
+				'45': '#96643A',
+				'60': '#da6fab',
+				'80': '#717dbd',
+				'95': '#c41039',
+				'100': '#88807e',
+				'107': '#46a299',
+				'108': '#a285b3',
+				'120': '#faa61a',
+				'125': '#5f9937',
+				'130': '#9f3925',
+				'135': '#0db14b',
+				'140': '#00929e',
+				'145': '#956438',
+				'150': '#9853a1',
+				'155': '#9C6DA8',
+				'535': '#d2bfa5',
+				'820': '#46ba7c',
+				'951': '#009db2',
+				'952': '#80ceca',
+				'960': '#f05a4e' }
+   routes['colour'] = [no2colour[i] for i in routes.RouteNo]
+
+   # for mapping we need a folium polyline
+   for i, row in routes.iterrows():
+      latlons = [(i[1],i[0]) for i in shapely.geometry.mapping(row.geometry)['coordinates']]
+      routes.at[i, 'polyline'] = folium.vector_layers.PolyLine(latlons, color=row.colour, popup = row.RouteNo + ' ' + row.RouteName)
+
+   # bus stops
+   # http://opendata.canterburymaps.govt.nz/datasets/b595b1365f8e47618658692539d946de_1/data
+   stops = gpd.read_file('metro/Bus_Stops.shp')
+   if boundingbox: stops = stops.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
+   for i, row in stops.iterrows():
+      print(row.PlatformNa, row.PlatformNo)
+      marker = folium.Marker(
+         location = [i[0] for i in reversed(row.geometry.coords.xy)],
+         icon = folium.Icon(color='blue', prefix='fa', icon='bus'),
+         popup="""
+         <b>{}</b>
+         <br />Bus stop: {}
+         <br />Routes: {}""".format(row.PlatformNa, int(row.PlatformNo) if pd.notnull(row.PlatformNo) else '-', row.RouteNos)
+         )
+      stops.at[i, 'marker'] = marker
+
+   return (routes, stops)
+
+
+######################################################################
 # get the schools we are interested in
 schools = get_schools([float(i) for i in chch.raw['boundingbox']])
 
@@ -114,12 +184,29 @@ for i, row in schools.iterrows():
 # add the zonepoly's to the map
 for i, row in schools.iterrows():
    if pd.notnull(row.zonepoly): row.zonepoly.add_to(m)
+######################################################################
 
-# add the rest
+
+######################################################################
+# metro info
+routes, stops = get_metro([float(i) for i in chch.raw['boundingbox']])
+routes_group = folium.FeatureGroup('Bus routes')
+for i, row in routes.iterrows():
+   routes_group.add_child(row.polyline)
+stops_group = folium.FeatureGroup('Bus stops', show=False)
+for i, row in stops.iterrows():
+   stops_group.add_child(row.marker)
+######################################################################
+
+
+# add the layers
 m.add_child(prim_group)
 m.add_child(high_group)
+m.add_child(routes_group)
+m.add_child(stops_group)
 m.add_child(folium.plugins.MeasureControl(primary_length_unit='kilometers', primary_area_unit='hectares'))
 folium.LayerControl().add_to(m)
+
 
 ######################################################################
 # add the custom leaflet javascript code so when a marker is clicked
@@ -132,6 +219,17 @@ folium.LayerControl().add_to(m)
 
 from branca.element import Element
 e = []
+
+# when zoomed in enough make the bus stops layer visible
+e.append("""{0}.on('zoomend', function() {{
+    if ({0}.getZoom() < 17 ) {{
+            {0}.removeLayer({1});
+    }}
+    else {{
+            {0}.addLayer({1});
+        }}
+}});""".format(m.get_name(), stops_group.get_name()))
+
 
 # the zonepoly's start as visible, remove them all
 for i, row in schools.iterrows():
@@ -164,6 +262,7 @@ for i, row in schools.iterrows():
       )""".format(m.get_name(), row.School_Id, row.zonepoly.get_name()))
 e.append("});")
 
+# put the new JS at the end
 e = Element("\n".join(e))
 html = m.get_root()
 html.script.get_root().render()
