@@ -100,7 +100,7 @@ def get_schools(boundingbox = None):
 
 
 def get_metro(boundingbox):
-   """Return the bus routes in optional boundingbox we are interested in."""
+   """Return the bus routes and stops in optional boundingbox we are interested in."""
 
    # the route data comes from
    #  http://opendata.canterburymaps.govt.nz/datasets/-bus-route-directions/data
@@ -157,7 +157,6 @@ def get_metro(boundingbox):
    stops = gpd.read_file('metro/Bus_Stops.shp')
    if boundingbox: stops = stops.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
    for i, row in stops.iterrows():
-      print(row.PlatformNa, row.PlatformNo)
       marker = folium.Marker(
          location = [i[0] for i in reversed(row.geometry.coords.xy)],
          icon = folium.Icon(color='blue', prefix='fa', icon='bus'),
