@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+
+import geopandas as gpd
+import pandas as pd
+import shapely
+import folium
+import folium.plugins
+import matplotlib
+import matplotlib.cm
+
+# find location
+import geopy.geocoders
+loca = geopy.geocoders.Nominatim(user_agent='MyChChAp')
+city_name = 'Wellington'
+city = loca.geocode('%s, New Zealand' % city_name)
+
+# make an interactive map of Christchurch
+m = folium.Map(location=(city.latitude, city.longitude), zoom_start=13, control_scale=True)
+
+def get_schools(boundingbox = None):
+   """Return the schools in optional boundingbox we are interested in.
+
+   boundingbox is
+      min lat, max lat, min long, max long
+      ymin, ymax, xmin, xmax
+   """
+
+   # these came from
+   # https://catalogue.data.govt.nz/dataset/directory-of-educational-institutions/resource/bdfe0e4c-1554-4701-a8fe-ba1c8e0cc2ce
+   schools = pd.read_csv('schooldirectory-28-04-2019-233051.csv')
+
+   # only want to keep some info (knowing the Total number and number
+   # of Europeans might be useful in predicting Hoity-toity ness)
+   schools = schools[['School_Id', 'Org_Name', 'URL', 'Longitude', 'Latitude', 'Org_Type', 'CoEd_Status', 'Decile', 'Total', 'European']]
+
+   # some schools don't have location, but I have checked these by
+   # eye, none of them interest us, so just drop them
+   schools = schools[schools.Latitude.notnull()]      
+
+   # since George is going into Intermediate, lets just consider
+   # schools that provide education for intermediate and older
+   schools = schools.loc[(schools.Org_Type == 'Full Primary') | (schools.Org_Type == 'Intermediate') | (schools.Org_Type.str.startswith('Second'))]
+
+   # we need a location as a proper Point type for cx slicing to work
+   schools['geometry'] = [shapely.geometry.Point(x, y) for x, y in zip(schools.Longitude, schools.Latitude)]
+   
+   schools = gpd.GeoDataFrame(schools)
+   schools.crs = {'init' :'epsg:4326'}    # this is basic latitude longitude
+
+   # boundingbox [ymin, ymax, xmin, xmax], but cx slicing takes # [xmin:xmax, ymin:ymax]
+   if boundingbox: schools = schools.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
+
+   # add in a column to indicate if it is a high school (easier than
+   # checking Org_Type startswith 'Second')
+   schools['high'] = schools.Org_Type.str.startswith('Second')
+
+   # some schools have zones, lets put those in for those that do.
+   # Got the zone info from https://koordinates.com/layer/743-nz-school-zones-sept-2010/?ex=1
+   zones = gpd.read_file('school_zones/nz-school-zones-sept-2010.shp')
+   zones = zones.to_crs(epsg=4326)  # basic lat/lon, everything else is in this
+   
+   # merge with schools.  Do a left merge so every school is retained,
+   # with optional zone info
+   schools = schools.merge(zones[['SchoolID', 'geometry']], how='left', left_on = 'School_Id', right_on = 'SchoolID')
+   schools.drop(columns='SchoolID', inplace=True)
+   schools.rename(columns={'geometry_y': 'zone'}, inplace=True)
+   
+   # the zone is a shapely polygon, for mapping we need a folium polygon
+   for i, row in schools.iterrows():
+      if pd.notnull(row.zone):
+         latlons = [(i[1], i[0]) for i in shapely.geometry.mapping(row.zone)['coordinates'][0]]
+         schools.at[i, 'zonepoly'] = folium.vector_layers.Polygon(latlons)
+
+   # each school needs a marker for showing on the map
+   for i, row in schools.iterrows():
+      marker = folium.Marker(
+         location = [row.Latitude, row.Longitude],
+         # high schools get blue buildings, otherwise green I (for intermediate)
+         icon = folium.Icon(color='blue', prefix='fa', icon='building') if row.high else folium.Icon(color='green',icon='italic'),
+         popup="""
+            <a href="{url}" target="_blank">{name}</a>
+            <table>
+            <tr><td>Type</td><td>{stype}</td>
+            <tr><td>CoEd?</td><td>{coed}</td>
+            <tr><td>Decile</td><td>{decile}</td>
+            <tr><td>#&nbsp;Students</td><td>{numstudents}</td>
+            <tr><td>#&nbsp;European&nbsp;</td><td>{numeuropeans}</td>
+            <tr><td>Zone</td><td>{zone}</td>
+            </table>""".format(
+                  url = row.URL if pd.notnull(row.URL) else '',
+                  name = row.Org_Name.replace(' ', '&nbsp;'),
+                  stype = row.Org_Type.replace(' ', '&nbsp;'),
+                  coed = 'Y' if row.CoEd_Status == 'Co-Educational' else 'N',
+                  decile = row.Decile,
+                  numstudents = row.Total,
+                  numeuropeans = row.European,
+                  sid = row.School_Id,
+                  zone = '<a id="zonelink%s" href="#">Show</a>' % row.School_Id if pd.notnull(row.zone) else 'None')
+         )
+
+      schools.at[i, 'marker'] = marker
+   return schools
+
+
+def get_metro(boundingbox):
+   """Return the bus routes and stops in optional boundingbox we are interested in."""
+
+   # the route data comes from
+   # chch
+   #  http://opendata.canterburymaps.govt.nz/datasets/-bus-route-directions/data
+   #routes = gpd.read_file('metro/_Bus_Route_Directions.shp')
+   # welly
+   #  http://data-gwrc.opendata.arcgis.com/datasets/metlink-public-transport-routes
+   routes = gpd.read_file('metro/Metlink_Public_Transport_Routes.shp')
+   routes = routes.to_crs(epsg=4326)  # basic lat/lon, everything else is in this
+
+   # only want routes in bounds of city
+   # boundingbox [ymin, ymax, xmin, xmax], but cx slicing takes # [xmin:xmax, ymin:ymax]
+   if boundingbox: routes = routes.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
+
+   # I found this in a css file on the metro website.  Bit of a pain
+   # it isn't included in the data file.  This maps the RouteNo to
+   # colour
+   no2colour = {
+				'A': '#F18600',
+				'F': '#005899',
+				'B': '#3ebced',
+				'O': '#f37021',
+				'P': '#554588',
+				'Y': '#ffc20e',
+				'Or': '#79bc43',
+				'17': '#ec008c',
+				'28': '#f79328',
+				'29': '#00539f',
+				'44': '#0074ad',
+				'45': '#96643A',
+				'60': '#da6fab',
+				'80': '#717dbd',
+				'95': '#c41039',
+				'100': '#88807e',
+				'107': '#46a299',
+				'108': '#a285b3',
+				'120': '#faa61a',
+				'125': '#5f9937',
+				'130': '#9f3925',
+				'135': '#0db14b',
+				'140': '#00929e',
+				'145': '#956438',
+				'150': '#9853a1',
+				'155': '#9C6DA8',
+				'535': '#d2bfa5',
+				'820': '#46ba7c',
+				'951': '#009db2',
+				'952': '#80ceca',
+				'960': '#f05a4e' }
+
+   # maps service name to index
+   foo = routes.SERVICE.unique()
+   servicename_to_index = {foo[i]:i for i in range(len(foo))}
+   viridis = matplotlib.cm.get_cmap('prism', len(routes.SERVICE.unique()))
+   routes['colour'] = [matplotlib.colors.rgb2hex(viridis(servicename_to_index[i])[:3]) for i in routes.SERVICE]
+
+   # for mapping we need a folium polyline
+   for i, row in routes.iterrows():
+      latlons = [(i[1],i[0]) for i in shapely.geometry.mapping(row.geometry)['coordinates']]
+      routes.at[i, 'polyline'] = folium.vector_layers.PolyLine(latlons, color=row.colour, popup = row.SERVICE)
+
+   # bus stops
+   # chch
+   # http://opendata.canterburymaps.govt.nz/datasets/b595b1365f8e47618658692539d946de_1/data
+   # wellington
+   # http://data-gwrc.opendata.arcgis.com/datasets/14d628fd0890409dbd2697262fb4c49b_1
+   stops = gpd.read_file('metro/Metlink_Service_Stops.shp')
+   stops = stops.to_crs(epsg=4326)  # basic lat/lon, everything else is in this
+   if boundingbox: stops = stops.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
+   for i, row in stops.iterrows():
+      marker = folium.Marker(
+         location = [i[0] for i in reversed(row.geometry.coords.xy)],
+         icon = folium.Icon(color='blue', prefix='fa', icon='bus'),
+         popup="""
+         <b>{}</b>
+         <br />Bus stop: {}""".format(row.Service, row.Stop if pd.notnull(row.Stop) else '-')
+         )
+      stops.at[i, 'marker'] = marker
+
+   return (routes, stops)
+
+
+######################################################################
+# get the schools we are interested in
+schools = get_schools([float(i) for i in city.raw['boundingbox']])
+
+# add school markers to correct group
+prim_group = folium.FeatureGroup("Full primary and intermediate schools")
+high_group = folium.FeatureGroup("High schools")
+for i, row in schools.iterrows():
+   (high_group if row.high else prim_group).add_child(row.marker)
+
+# add the zonepoly's to the map
+for i, row in schools.iterrows():
+   if pd.notnull(row.zonepoly): row.zonepoly.add_to(m)
+######################################################################
+
+
+######################################################################
+# metro info
+routes, stops = get_metro([float(i) for i in city.raw['boundingbox']])
+routes_group = folium.FeatureGroup('Bus routes')
+for i, row in routes.iterrows():
+   routes_group.add_child(row.polyline)
+stops_group = folium.FeatureGroup('Bus stops', show=False)
+for i, row in stops.iterrows():
+   stops_group.add_child(row.marker)
+######################################################################
+
+
+# add the layers
+m.add_child(prim_group)
+m.add_child(high_group)
+m.add_child(routes_group)
+m.add_child(stops_group)
+m.add_child(folium.plugins.MeasureControl(primary_length_unit='kilometers', primary_area_unit='hectares'))
+folium.LayerControl().add_to(m)
+
+
+######################################################################
+# add the custom leaflet javascript code so when a marker is clicked
+# the zonepoly gets shown
+#
+# the method followed is from FabeG on
+#  https://github.com/python-visualization/folium/issues/86
+# (see near the end posted around the end of April 2018)
+#
+
+from branca.element import Element
+e = []
+
+# when zoomed in enough make the bus stops layer visible
+e.append("""{0}.on('zoomend', function() {{
+    if ({0}.getZoom() < 17 ) {{
+            {0}.removeLayer({1});
+    }}
+    else {{
+            {0}.addLayer({1});
+        }}
+}});""".format(m.get_name(), stops_group.get_name()))
+
+
+# the zonepoly's start as visible, remove them all
+for i, row in schools.iterrows():
+   if pd.notnull(row.zone): e.append("""{0}.remove();""".format(row.zonepoly.get_name()))
+
+#
+# using semiomant's suggestion on
+#  https://stackoverflow.com/questions/13698975/click-link-inside-leaflet-popup-and-do-javascript
+# this makes a function that is called on every popupopen and it
+# checks to make sure that their is a callback bound to every zonelink
+# 
+# to stop the callback being bound repeatedly, use Kondra Garus's
+# suggestion on
+#  https://stackoverflow.com/questions/6361465/how-to-check-if-click-event-is-already-bound-jquery
+# which is the :not(.bound) thing
+#
+e.append("""{0}.on('popupopen', function() {{""".format(m.get_name()))
+for i, row in schools.iterrows():
+   if pd.isnull(row.zone): continue
+   e.append("""
+      $("#zonelink{1}:not(.bound)").addClass('bound').on('click', function(event) {{
+         if({0}.hasLayer({2})) {{
+            $(this).text('Show');
+            {0}.removeLayer({2});
+         }} else {{
+            $(this).text('Hide');
+            {0}.addLayer({2});
+         }}
+      }}
+      )""".format(m.get_name(), row.School_Id, row.zonepoly.get_name()))
+e.append("});")
+
+# put the new JS at the end
+e = Element("\n".join(e))
+html = m.get_root()
+html.script.get_root().render()
+html.script._children[e.get_name()] = e
+######################################################################
+
+
+
+
+# write it out 
+m.save('docs/%s.html' % city_name)
+
