@@ -98,7 +98,7 @@ def get_schools(boundingbox = None):
    return schools
 
 
-def get_metro(boundingbox):
+def get_metro(city_name, boundingbox):
    """Return the bus routes and stops in optional boundingbox we are interested in."""
 
    # the route data comes from
@@ -107,7 +107,10 @@ def get_metro(boundingbox):
    #routes = gpd.read_file('metro/_Bus_Route_Directions.shp')
    # welly
    #  http://data-gwrc.opendata.arcgis.com/datasets/metlink-public-transport-routes
-   routes = gpd.read_file('metro/Metlink_Public_Transport_Routes.shp')
+   if city_name == 'Christchurch':
+      routes = gpd.read_file('metro/_Bus_Route_Directions.shp')
+   else:
+      routes = gpd.read_file('metro/Metlink_Public_Transport_Routes.shp')
    routes = routes.to_crs(epsg=4326)  # basic lat/lon, everything else is in this
 
    # only want routes in bounds of city
@@ -116,7 +119,7 @@ def get_metro(boundingbox):
 
    # I found this in a css file on the metro website.  Bit of a pain
    # it isn't included in the data file.  This maps the RouteNo to
-   # colour
+   # colour for Christchurch
    no2colour = {
 				'A': '#F18600',
 				'F': '#005899',
@@ -149,24 +152,29 @@ def get_metro(boundingbox):
 				'951': '#009db2',
 				'952': '#80ceca',
 				'960': '#f05a4e' }
-
    # maps service name to index
-   foo = routes.SERVICE.unique()
-   servicename_to_index = {foo[i]:i for i in range(len(foo))}
-   viridis = matplotlib.cm.get_cmap('prism', len(routes.SERVICE.unique()))
-   routes['colour'] = [matplotlib.colors.rgb2hex(viridis(servicename_to_index[i])[:3]) for i in routes.SERVICE]
+   if city_name == 'Christchurch':
+      routes['colour'] = [no2colour[i] for i in routes.RouteNo]
+   else:
+      foo = routes.SERVICE.unique()
+      servicename_to_index = {foo[i]:i for i in range(len(foo))}
+      viridis = matplotlib.cm.get_cmap('prism', len(routes.SERVICE.unique()))
+      routes['colour'] = [matplotlib.colors.rgb2hex(viridis(servicename_to_index[i])[:3]) for i in routes.SERVICE]
 
    # for mapping we need a folium polyline
    for i, row in routes.iterrows():
       latlons = [(i[1],i[0]) for i in shapely.geometry.mapping(row.geometry)['coordinates']]
-      routes.at[i, 'polyline'] = folium.vector_layers.PolyLine(latlons, color=row.colour, popup = row.SERVICE)
+      routes.at[i, 'polyline'] = folium.vector_layers.PolyLine(latlons, color=row.colour, popup = row.RouteNo + ' ' + row.RouteName if city_name == 'Christchurch' else row.SERVICE)
 
    # bus stops
    # chch
    # http://opendata.canterburymaps.govt.nz/datasets/b595b1365f8e47618658692539d946de_1/data
    # wellington
    # http://data-gwrc.opendata.arcgis.com/datasets/14d628fd0890409dbd2697262fb4c49b_1
-   stops = gpd.read_file('metro/Metlink_Service_Stops.shp')
+   if city_name == 'Christchurch':
+      stops = gpd.read_file('metro/Bus_Stops.shp')
+   else:
+      stops = gpd.read_file('metro/Metlink_Service_Stops.shp')
    stops = stops.to_crs(epsg=4326)  # basic lat/lon, everything else is in this
    if boundingbox: stops = stops.cx[boundingbox[2]:boundingbox[3], boundingbox[0]:boundingbox[1]]
    for i, row in stops.iterrows():
@@ -174,8 +182,9 @@ def get_metro(boundingbox):
          location = [i[0] for i in reversed(row.geometry.coords.xy)],
          icon = folium.Icon(color='blue', prefix='fa', icon='bus'),
          popup="""
-         <b>{}</b>
-         <br />Bus stop: {}""".format(row.Service, row.Stop if pd.notnull(row.Stop) else '-')
+				<b>{}</b> <br />Bus stop: {} <br />Routes: {}""".format(row.PlatformNa, int(row.PlatformNo) if pd.notnull(row.PlatformNo) else '-', row.RouteNos)
+				if city_name == 'Christchurch' else
+				"""<b>{}</b> <br />Bus stop: {}""".format(row.Service, row.Stop if pd.notnull(row.Stop) else '-')
          )
       stops.at[i, 'marker'] = marker
 
@@ -224,7 +233,7 @@ for i, row in schools.iterrows():
 
 ######################################################################
 # metro info
-routes, stops = get_metro([float(i) for i in city.raw['boundingbox']])
+routes, stops = get_metro(city_name, [float(i) for i in city.raw['boundingbox']])
 routes_group = folium.FeatureGroup('Bus routes')
 for i, row in routes.iterrows():
    routes_group.add_child(row.polyline)
